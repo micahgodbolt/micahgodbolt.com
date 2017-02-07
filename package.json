@@ -8,6 +8,7 @@
     "@frctl/fractal": "^1.1.0",
     "@frctl/twig": "^1.0.0-beta.1",
     "metalsmith": "^2.1.0",
+    "metalsmith-assets": "^0.1.0",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-excerpts": "^1.1.0",
     "metalsmith-markdown": "^0.2.1",

@@ -1,4 +1,5 @@
 var Metalsmith  = require('metalsmith');
+var assets      = require('metalsmith-assets');
 var markdown    = require('metalsmith-markdown');
 var permalinks  = require('metalsmith-permalinks');
 var excerpts    = require('metalsmith-excerpts');
@@ -14,15 +15,21 @@ Metalsmith(__dirname)
   })
   .source('./src')
   .destination('./build')
-  .clean(false)
+  .clean(true)
+  .use(assets({
+      source: './src/assets', // relative to the working directory
+      destination: './assets' // relative to the build directory
+  }))
   .use(collections({
     posts: {
-      pattern: 'posts/*.md'
+      pattern: 'posts/**/*.md'
     }
   }))
   .use(markdown())
   .use(excerpts())
-  .use(permalinks())
+  .use(permalinks({
+    pattern: '/blog/:title'
+  }))
   .use(twig({
     directory: 'presenters',
     cache: false

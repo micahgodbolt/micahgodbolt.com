@@ -1,7 +1,5 @@
 ---
+title: Home
 view: home.twig
-title: this rocks
+permalink: false
 ---
-
-<h2>Read what I have to say</h2>
-
