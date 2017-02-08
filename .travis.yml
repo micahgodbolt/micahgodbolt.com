@@ -21,5 +21,5 @@ qtsHlsuviZU2CYjU59KUkjsTY/5P029EcyZrCchr1pfy+Q9HlsPp+RuCHIR+Zd3C5WNsvlGH2UEE+foX
   acl: public_read
   skip_cleanup: true
   on:
-    repo: micahgodbolt/micahgodbolt
+    repo: micahgodbolt/micahgodbolt.com
     branch: master
