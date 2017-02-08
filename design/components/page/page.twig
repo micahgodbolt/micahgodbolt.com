@@ -2,11 +2,11 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>MicahGodbolt.com - {{ title }}</title>
+    <title>{{metadata.sitename}} - {{ title }}</title>
     {% if excerpt %}
     <meta name="description" content="{{excerpt|striptags}}">
     {% else %}
-    <meta name="description" content="{{description}}">
+    <meta name="description" content="{{metadata.description}}">
     {% endif %}
     <link rel="alternate" type="application/rss+xml" title="MicahGodbolt.com Feed" href="/rss.xml" />
     <meta name="viewport" content="width=device-width,initial-scale=1">

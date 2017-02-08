@@ -8,10 +8,8 @@ var twig        = require('metalsmith-twig');
 
 Metalsmith(__dirname)
   .metadata({
-    title: "My Static Site & Blog",
-    description: "It's about saying »Hello« to the World.",
-    generator: "Metalsmith",
-    url: "http://www.metalsmith.io/"
+    sitename: "MicahGodbolt.com",
+    description: "The site and blog of Micah Godbolt"
   })
   .source('./src')
   .destination('./build')
@@ -22,7 +20,9 @@ Metalsmith(__dirname)
   }))
   .use(collections({
     posts: {
-      pattern: 'posts/**/*.md'
+      pattern: 'posts/**/*.md',
+      sortBy: 'date',
+      reverse: true
     }
   }))
   .use(markdown())

@@ -1,6 +1,7 @@
 ---
 title: Choosing a Blogging Platform
 view: post.twig
+date: 2015-12-17
 ---
 
 One of my first major decisions when starting this new blog was going to be platform. I come from a Drupal development background so one might expect me to fire up a new Drupal 7 site, or be adventurous and showcase the new Drupal 8. But for me, the overhead of dealing with an entire CMS was way more than I needed for what I was trying to build. On top of that, even as a Drupal dev, I spend more time in JavaScript than I do PHP. So with static site generators being "so hot right now", I set out to find the right one for me.

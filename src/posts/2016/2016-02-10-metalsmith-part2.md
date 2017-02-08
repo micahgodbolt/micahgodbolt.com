@@ -1,6 +1,7 @@
 ---
 title: An Intro To Metalsmith - Part 2
 view: post.twig
+date: 2016-02-10
 ---
 
 So far our [Metalsmith Starter project](https://github.com/micahgodbolt/metalsmith-starter) doesn't do much more than move HTML files from one folder to another. Today we're going too add some much needed functionality!

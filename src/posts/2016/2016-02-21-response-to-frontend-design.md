@@ -2,6 +2,7 @@
 title: A Response to Brad Frost's "Frontend Design" Article
 view: post.twig
 draft: false
+date: 2016-02-21
 ---
 
 

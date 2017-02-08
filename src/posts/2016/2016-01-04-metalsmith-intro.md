@@ -1,6 +1,7 @@
 ---
 title: An Intro To Metalsmith
 view: post.twig
+date: 2016-01-14
 ---
 
 [Metalsmith](http://www.metalsmith.io/) bills itself as "An extremely simple, _pluggable_ static site generator", and it delivers in some big ways. If you want to learn more about Metalsmith, you are in the right place! Over the next several posts I'll be diving deep into how the system works, how you can extend it, and how you can make it do just about anything that you want. If you aren't interested in static site generators, or if you're already invested in some other platform, don't go anywhere! This isn't just a simple how to. I am going to spend some time peeling back the layers of a sophisticated NodeJS tool. I'm confident you'll learn about good ways to dive into the tools you already use, and understand them more completely. Once you "know how the sausage is made", you'll be in a better position to debug, improve and extend anything in your current toolchain.

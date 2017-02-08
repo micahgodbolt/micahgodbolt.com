@@ -2,6 +2,7 @@
 title: An Intro To Metalsmith - Part 3
 view: post.twig
 draft: true
+date: 2016-02-14
 ---
 
 ```bash

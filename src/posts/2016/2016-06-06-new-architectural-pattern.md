@@ -1,6 +1,7 @@
 ---
 title: A New Design System Architecture
 view: post.twig
+date: 2016-06-06
 ---
 
 A funny thing happened this last month. Between two different events, and three isolated groups, a consensus was made, terminology was chosen, and the way that we approached building and implementing design systems changed forever.

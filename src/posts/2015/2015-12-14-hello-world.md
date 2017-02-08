@@ -1,6 +1,7 @@
 ---
 title: Hello World
 view: post.twig
+date: 2015-12-14
 ---
 
 My name is Micah, and you've found my new blog!
