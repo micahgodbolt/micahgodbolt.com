@@ -28,7 +28,7 @@ Metalsmith(__dirname)
   .use(markdown())
   .use(excerpts())
   .use(permalinks({
-    pattern: '/blog/:title'
+    pattern: 'blog/:title'
   }))
   .use(twig({
     directory: 'presenters',
