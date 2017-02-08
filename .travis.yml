@@ -2,14 +2,20 @@ language: node_js
 node_js:
 - 6.9.4
 script:
-- npm run build
+- npm run start
 deploy:
   detect_encoding: true
   provider: s3
   region: us-west-2
-  access_key_id: AKIAJQ3SJSUKUT6ONX2A
+  access_key_id: AKIAITRMX3FIFQ5NIPHA
   secret_access_key:
-    secure: B8Zl8X3i8s3mkOH3tKlUo8Zgb2g+kbRqn76kLs1KOWrulmkYWdFzwgceyY1P/Fl8fCzAdqN3pD9j6tgOnK5KmMUPII1aQ8EtO2Dfu0+0rL38nHpawAqqN+I95l87oqegjh5nZ0+zXW0tRH4wGbADV3y7W3EKegeYPbBKXMjVrku6dKG5/zMy1fcNXl+e3tGRIj4xkwj0j59Kcc2krf4K4idY4002gMz2CGvYXb1JjhU9Pjff+ThbiQuJtQMODMwNsPmnGgv+Szfg6Q3StjU//tkKt8BSOlKS+vGYc6l3zlXTL5r95usDifJvNEiy8km78TlLHTYt67CSuTokWyhJR9MuxZwO35ByM2D+aEOygXiTQe71dA85bg2DBi+C8JXvYM5iA0Q5qBxA51G0c79JbhIPptrnR6eZ753tzEtxHI4eaGRIvTUpsXbLLCO1LKmqo3jXpaUScFY8ypa8CXfUQ/6UxEtP66ico+zPwf6NuZ3LFU+aDs/CxfaPlDVXqGTmsKTOeGZ+R43nnZQL18I/D6AStk0RPeidM+9dhw+/RsxjZFnA9pVZwSBA/UIqxNDNRe+alEI0WTAjvB06/MCMyE3CHBVF6c8qn8xe8Ed6kM5td1i+GjuncjrLvR6voPBBpTSzc9M5arlh/chKLEudhjdZ0pCIORkytXsi7ZhBCWc=
+    secure: "ta5SNGRkf8HrV3qrLrA8Aec9mk6rdNP75rL2E5zZHuHak1cnn4qkvrhe7empoB4BmA0mKLBomsLZPBXdbS0jG2ekYQZq
+T1S3YOaTSa9INb/gidJu+y04QwUNxpOnCAxR1Hym8i34C4ps8stUpTcFzZyZIq5xBeuTY46Jvzipi6g7nEgmYgkjICECyWQDpnDtwQK
+hJvqa8UoydTlTsVk4elP5aeGTHsJzkhXVRe6YTj8wOQpt3oulM1h1kYg3Ee8AmOQQVr/ObByMJ2xyGoCIJhyJNPnhSL7o7T0Rnr/eiS
+3QyRu1R6jbX7lKKh2woBpc7Mtj7BTq4sx5LNRznNxYPxHQCUJQMLRFXVVKkrI0bv9RRULs/mOfLDvOz7j4wl1IeFjTa1R/51+3WFu/m
+AFMHKpUsrmF7mmFBkjVe0tEayaIfNLrXRf6MreP88yQGxPtSW2zfaZWyVdy7gvMuOMik+POeRKJaJu45MOB+ZPOt/3utV9r2GkxJDq9
+qtsHlsuviZU2CYjU59KUkjsTY/5P029EcyZrCchr1pfy+Q9HlsPp+RuCHIR+Zd3C5WNsvlGH2UEE+foX9jt1N+zgswmdUBHmR5oofas
+8TpEFa2+RqLgPedqn1+y443cduh52iQ0jh2y6jRFGgTTabs9La9utI/chwgxIDqUEzkidsY1jq0w="
   bucket: micahgodbolt.com
   local-dir: build
   acl: public_read
