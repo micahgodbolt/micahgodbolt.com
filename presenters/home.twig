@@ -1,5 +1,9 @@
 {% extends '../design/components/page/page.twig' %}
 
+{% block header %}
+    {% include '../design/components/post/post--excerpt.twig' %}
+{% endblock %}
+
 {% block body %}
    {{contents}}
 
@@ -12,4 +16,8 @@
         }  only %}
     {% endfor %}
 
+{% endblock %}
+
+{% block footer %}
+    {% include '../design/components/footer/footer.twig' %}
 {% endblock %}

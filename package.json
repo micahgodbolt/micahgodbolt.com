@@ -2,7 +2,7 @@
   "name": "fractal-metalsmith",
   "version": "0.1.0",
   "scripts": {
-    "start": "node metalsmith.js"
+    "start": "node metalsmith.js & fractal build"
   },
   "dependencies": {
     "@frctl/fractal": "^1.1.0",
@@ -11,6 +11,7 @@
     "metalsmith-assets": "^0.1.0",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-excerpts": "^1.1.0",
+    "metalsmith-feed": "^0.2.0",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-twig": "^1.0.4"

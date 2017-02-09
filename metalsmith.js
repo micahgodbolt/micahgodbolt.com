@@ -4,10 +4,14 @@ var markdown    = require('metalsmith-markdown');
 var permalinks  = require('metalsmith-permalinks');
 var excerpts    = require('metalsmith-excerpts');
 var collections = require('metalsmith-collections');
+var feed        = require('metalsmith-feed');
 var twig        = require('metalsmith-twig');
 
 Metalsmith(__dirname)
   .metadata({
+    site: {
+      url: 'https://micahgodbolt.com'
+    },
     sitename: "MicahGodbolt.com",
     description: "The site and blog of Micah Godbolt"
   })
@@ -29,6 +33,9 @@ Metalsmith(__dirname)
   .use(excerpts())
   .use(permalinks({
     pattern: 'blog/:title'
+  }))
+  .use(feed({
+    collection: 'posts'
   }))
   .use(twig({
     directory: 'presenters',

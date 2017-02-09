@@ -25,6 +25,8 @@ fractal.set('project.title', 'micahgodbolt.com');
  */
 fractal.components.set('path', path.join(__dirname, 'design/components'));
 
+fractal.web.set('builder.dest', __dirname + '/design/build');
+
 /*
  * Tell Fractal where to look for documentation pages.
  */
