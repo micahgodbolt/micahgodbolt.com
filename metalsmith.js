@@ -17,7 +17,7 @@ Metalsmith(__dirname)
   })
   .source('./src')
   .destination('./build')
-  .clean(true)
+  .clean(false)
   .use(assets({
       source: './src/assets', // relative to the working directory
       destination: './assets' // relative to the build directory

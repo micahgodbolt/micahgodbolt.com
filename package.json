@@ -2,11 +2,20 @@
   "name": "fractal-metalsmith",
   "version": "0.1.0",
   "scripts": {
-    "start": "node metalsmith.js & fractal build"
+    "start": "concurrently \"http-server ./build\" \"fractal start -w \" \"npm run watch.sass \" \"npm run watch.metalsmith \" ",
+    "build": "concurrently \"fractal build\" \"npm run build.sass \" \"npm run build.metalsmith \" ",
+    "watch.sass": "chokidar \"**/*.scss\" -c \"npm run build.sass\"",
+    "build.sass": "node-sass --include-path scss design/scss/main.scss   build/css/main.css",
+    "watch.metalsmith": "chokidar \"src/**/*\" \"presenters/**/*\" -c \"npm run build.metalsmith\"",
+    "build.metalsmith": "node metalsmith.js"
   },
   "dependencies": {
     "@frctl/fractal": "^1.1.0",
     "@frctl/twig": "^1.0.0-beta.1",
+    "chokidar-cli": "^1.2.0",
+    "concurrently": "^3.2.0",
+    "http-server": "^0.9.0",
+    "livereload": "^0.6.0",
     "metalsmith": "^2.1.0",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-collections": "^0.9.0",
@@ -14,6 +23,8 @@
     "metalsmith-feed": "^0.2.0",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-permalinks": "^0.5.0",
-    "metalsmith-twig": "^1.0.4"
+    "metalsmith-twig": "^1.0.4",
+    "node-sass": "^4.5.0",
+    "nodemon": "^1.11.0"
   }
 }

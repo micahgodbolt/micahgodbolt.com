@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - 6.9.4
 script:
-- npm run start
+- npm run build
 deploy:
   - detect_encoding: true
     provider: s3
