@@ -1,5 +1,18 @@
-$var: blue;
+html {
+    font-size: calc( 16px + (8) * (100vw - 320px) / 800 ); 
+    margin: 0 auto; font-family: sans-serif;
+    @media screen and (min-width: 820px){
+        font-size: 21px; max-width: 820px;
+    }
+}
 
-div {
-    background: $var;
+body { 
+    padding: 0 .7em; 
+}
+
+pre, 
+p > code { 
+    background: #eee; 
+    overflow: scroll; 
+    font-size: .7em;
 }
