@@ -1,6 +1,7 @@
 ---
 title: About
 view: page.twig
+permalink: false
 position: 99
 ---
 

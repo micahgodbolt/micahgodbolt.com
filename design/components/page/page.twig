@@ -16,22 +16,23 @@
         href="/assets/img/favicon.ico">
   </head>
   <body>
-     <div class="header">
-        {% block header %}
-         
-        {% endblock %}
-    </div>
-    <div class="body">
-        {% block body %}
+    <div class="page">
+        <div class="header">
+            {% block header %}
+            
+            {% endblock %}
+        </div>
+        <div class="body">
+            {% block body %}
 
-        {% endblock %}
+            {% endblock %}
+        </div>
+        <div class="footer">
+            {% block footer %}
+            
+            {% endblock %}
+        </div>
     </div>
-    <div class="footer">
-        {% block footer %}
-         
-        {% endblock %}
-    </div>
-
     {% if serve %}
     <script src="http://localhost:35729/livereload.js"></script>
     {% endif %}

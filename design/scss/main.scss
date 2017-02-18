@@ -1,23 +1,46 @@
+@import '../components/navigation/navigation';
+@import 'variables';
+
 html {
-    background-color: white;
+    background-color: $color-page;
     font-size: calc( 16px + (8) * (100vw - 320px) / 800 ); 
-    margin: 0 auto; font-family: sans-serif;
+    margin: 0 auto; 
+    font-family: sans-serif;
     @media screen and (min-width: 820px){
-        font-size: 21px; max-width: 820px;
+        font-size: 21px;
     }
 }
 
-body { 
-    padding: 0 .7em; 
+body {
+    margin: 0;
 }
 
-body a {
-  color: blue;
+a:not([class]) {
+    color: $color-primary-light;
+    text-decoration: none;
+    &:hover {
+        color: $color-primary-lighter;
+        text-decoration: underline;
+    }
 }
 
+
+.body, .footer {
+    padding: 0 .7em;
+    margin: auto;
+    max-width: 820px;
+}
+
+pre {
+    padding: 1em;
+}
+p > code {
+    padding: .1em .3em;
+}
 pre, 
-p > code { 
-    background: #eee; 
-    overflow: scroll; 
+p > code {
+    color: $color-page;
+    background: $color-primary-light; 
+    overflow-x: scroll; 
     font-size: .7em;
 }
