@@ -23,22 +23,3 @@ deploy:
     on:
       repo: micahgodbolt/micahgodbolt.com
       branch: master
-  - detect_encoding: true
-    provider: s3
-    region: us-west-2
-    access_key_id: AKIAITRMX3FIFQ5NIPHA
-    secret_access_key:
-      secure: "ta5SNGRkf8HrV3qrLrA8Aec9mk6rdNP75rL2E5zZHuHak1cnn4qkvrhe7empoB4BmA0mKLBomsLZPBXdbS0jG2ekYQZq
-  T1S3YOaTSa9INb/gidJu+y04QwUNxpOnCAxR1Hym8i34C4ps8stUpTcFzZyZIq5xBeuTY46Jvzipi6g7nEgmYgkjICECyWQDpnDtwQK
-  hJvqa8UoydTlTsVk4elP5aeGTHsJzkhXVRe6YTj8wOQpt3oulM1h1kYg3Ee8AmOQQVr/ObByMJ2xyGoCIJhyJNPnhSL7o7T0Rnr/eiS
-  3QyRu1R6jbX7lKKh2woBpc7Mtj7BTq4sx5LNRznNxYPxHQCUJQMLRFXVVKkrI0bv9RRULs/mOfLDvOz7j4wl1IeFjTa1R/51+3WFu/m
-  AFMHKpUsrmF7mmFBkjVe0tEayaIfNLrXRf6MreP88yQGxPtSW2zfaZWyVdy7gvMuOMik+POeRKJaJu45MOB+ZPOt/3utV9r2GkxJDq9
-  qtsHlsuviZU2CYjU59KUkjsTY/5P029EcyZrCchr1pfy+Q9HlsPp+RuCHIR+Zd3C5WNsvlGH2UEE+foX9jt1N+zgswmdUBHmR5oofas
-  8TpEFa2+RqLgPedqn1+y443cduh52iQ0jh2y6jRFGgTTabs9La9utI/chwgxIDqUEzkidsY1jq0w="
-    bucket: library.micahgodbolt.com
-    local-dir: design/build
-    acl: public_read
-    skip_cleanup: true
-    on:
-      repo: micahgodbolt/micahgodbolt.com
-      branch: master
