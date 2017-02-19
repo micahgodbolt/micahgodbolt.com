@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "scripts": {
     "start": "concurrently \"http-server ./build -p 4321\" \"fractal start -s \" \"npm run watch.sass \" \"npm run watch.metalsmith \" ",
-    "build": "concurrently  \"npm run build.sass \" \"npm run build.metalsmith \" ",
+    "build": "concurrently \"fractal build\" \"npm run build.sass \" \"npm run build.metalsmith \" ",
     "watch.sass": "chokidar \"**/*.scss\" -c \"npm run build.sass\"",
-    "build.sass": "node-sass --include-path scss design/scss/main.scss   build/css/main.css & node-sass --include-path scss design/scss/main.scss   design/css/main.css",
+    "build.sass": "node-sass --include-path scss design/scss/main.scss   build/css/main.css & node-sass --include-path scss design/scss/main.scss   design/public/css/main.css",
     "watch.metalsmith": "chokidar \"src/**/*\" \"**/*.twig\" -c \"npm run build.metalsmith\"",
     "build.metalsmith": "node metalsmith.js"
   },
