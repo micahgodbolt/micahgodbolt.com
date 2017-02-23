@@ -1,5 +1,5 @@
  <article>
-    <h2><a href="/{{path}}/">{{title}}</a></h2>
-    <time datetime="{{ published|date("m/d/Y")}}">Posted on: {{ published|date("m/d/Y") }}</time>
+    <h2 class="post-title--excerpt post-title"><a href="/{{path}}/">{{title}}</a></h2>
+    <time class="post-postedOn post-postedOn--excerpt" datetime="{{ published|date("m/d/Y")}}">Posted on: <span class="post-date post-date--excerpt">{{ published|date("m/d/Y") }}</span></time>
     <p>{{excerpt}}</p>
 </article>
