@@ -7,7 +7,7 @@ position: 99
 
 # About Micah Godbolt
 
-I'm a Front-end Architect, author, speaker, trainer, blogger and developer from the Portland area. If you are interested in having me speak at your conference, write for your publication, put on a training session or consult on your next project, check out the links below and drop me a line.
+I'm a Front-end Architect, author, speaker, trainer, blogger and developer from the Seattle area. If you are interested in having me speak at your conference, write for your publication, put on a training session or consult on your next project, check out the links below and drop me a line.
 
 
 ## Contact Me
@@ -25,12 +25,13 @@ I'm a Front-end Architect, author, speaker, trainer, blogger and developer from 
 - [DrupalCon New Orleans 2016](https://bit.ly/road-runner-rules)
 - CSS Dev Conf 2013 - Get Your Sass In Line
 - [CSS Dev Conf 2014 - Raising a Banner for Front-end Architecture](https://teamtreehouse.com/library/raising-a-banner-for-the-frontend-architect)
-- CSS Dev Conf 2015 - Visual Regression Testing
+- [CSS Dev Conf 2015 - Visual Regression Testing](https://www.youtube.com/watch?v=7RxjhaPlRw4)
 - Sass Summit 2014 - Putting It All Together with Sass
 - Front-end Summit 2015 - Creating Workflows with Grunt
+- [Generate Conf London - Road Runner Rules - Guidelines for Design Systems](https://www.youtube.com/watch?v=CnspEEQqb3w)
 
 ### Training
-- [Frontend Architecture for Design Systems - Coming September 2016](http://www.generateconf.com/london-2016/schedule/frontend-architecture-design-systems/)
+- Generate Conf London - Frontend Architecture for Design Systems
 - CSS Dev Conf 2015 - Visual Regression Testing Workshop
 - [SassBites Podcast](https://www.youtube.com/user/sassbites)
   - [Intro to Flex Box](https://www.youtube.com/playlist?list=PLJKslvBeWd2ZakfNjMo8ZZup3IMrxeTG0)
@@ -40,7 +41,8 @@ I'm a Front-end Architect, author, speaker, trainer, blogger and developer from 
 
 ### Writing
 
-- [Front-end Architecture Book on O'Reilly Press](http://frontendarchitecture.info/)
+- [Front-end Architecture Book - O'Reilly Press](http://frontendarchitecture.info/)
+- [Document your Design Systems with Fractal - CreativeBloq](http://www.creativebloq.com/how-to/document-your-design-systems-with-fractal)
 - [CSS Testing with PhantomCSS, PhantomJS, CasperJS and Grunt](https://www.phase2technology.com/blog/css-testing-with-phantomcss-phantomjs-casperjs-and-grunt/)
 - [Used and Abused - CSS Inheritance and Our Misuse of the Cascade](https://www.phase2technology.com/blog/used-and-abused-css-inheritance-and-our-misuse-of-the-cascade/)
 - [Everything you need to know about Sass 3.4](https://www.phase2technology.com/blog/everything-you-need-to-know-about-sass-3-4/)
