@@ -39,7 +39,7 @@ With some components it makes sense to include default content, and let a user o
 
 When deciding if you should include any default content think about how often it will be used vs overriden, and the weight of that extra code needed to support the default content. If you have a close button on 95% of your modals, go ahead and include that by default in the component. But if the cancel and submit buttons only appear in some of your modal designs, consider making a dialog component instead, which uses the modal, but has those buttons included by default.
 
-Composability also encourages smaller reusable pieces of content. If you decided to break the close button out of the modal into it's own component (possibly with the abiliity to include multiple icons), you now have an Icon based UI component that could be used to close Panels, or minimize cards etc.
+Composability also encourages smaller reusable pieces of content. If you decided to break the close button out of the modal into its own component (possibly with the abiliity to include multiple icons), you now have an Icon based UI component that could be used to close Panels, or minimize cards etc.
 
 ## Further Reading
 
