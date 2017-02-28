@@ -45,6 +45,6 @@ Composability also encourages smaller reusable pieces of content. If you decided
 
 Once you have a system of containers and components that you can compose together, you'll find that you start to make many of your new components without ever introducing new markup or styles. By abstracting into components everything your visual language is ["needs to say"](https://twitter.com/micahgodbolt/status/717565115919237120), you can start to build an infinate number of "patterns" that are nothing more than custom interfaces into more complex designs. 
 
-I wrote about this style of composition in a previous post called ["A New Design System Architecture"](a-new-design-system-architecture).
+I wrote about this style of composition in a previous post called ["A New Design System Architecture"](/blog/a-new-design-system-architecture).
 
 I also spoke about it at Generate London in a talk called [Road Runner Rules](https://www.youtube.com/watch?v=CnspEEQqb3w)
