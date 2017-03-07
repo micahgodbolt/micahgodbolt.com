@@ -1,5 +1,5 @@
 ---
-title: CSS Grid - Fist Look
+title: CSS Grid - First Look
 view: post.twig
 date: 2017-03-06
 ---
