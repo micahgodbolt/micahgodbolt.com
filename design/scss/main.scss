@@ -16,6 +16,11 @@ body {
     margin: 0;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 a:not([class]) {
     color: $color-primary-light;
     text-decoration: none;
@@ -37,11 +42,11 @@ a:not([class]) {
 pre {
     padding: 1em;
 }
-p > code {
+p > code, ul code {
     padding: .1em .3em;
 }
 pre, 
-p > code {
+p > code, ul code {
     color: $color-page;
     background: $color-primary-light; 
     overflow-x: scroll; 
