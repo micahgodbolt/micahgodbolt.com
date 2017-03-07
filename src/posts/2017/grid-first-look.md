@@ -30,22 +30,31 @@ Once I had a supported browser, I could now view all the grid examples I ran acr
 
 ## Our First Grid Example
 
-I wanted to wrap this post up by looking at [Rachel's first examples](http://codepen.io/rachelandrew/pen/BNXyQa), and taking note of everything I learned.
+I wanted to start this post off by looking at [Rachel's first examples](http://codepen.io/rachelandrew/pen/BNXyQa), and taking note of everything I learned.
 
-<img src="/assets/img/grid-example-1.png"/>
+<p data-height="265" data-theme-id="0" data-slug-hash="BNXyQa" data-default-tab="css,result" data-user="rachelandrew" data-embed-version="2" data-pen-title="Grid by Example 1: Defining a Grid" class="codepen">See the Pen <a href="https://codepen.io/rachelandrew/pen/BNXyQa/">Grid by Example 1: Defining a Grid</a> by rachelandrew (<a href="http://codepen.io/rachelandrew">@rachelandrew</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+
 
 - `display: grid` is nice and consistent with `display: flex` and will make switching from one display mode to another quite easy.
 - `grid-template-columns: 100px 100px 100px;` is one of the longest hyphenations I've seen in CSS, and I'm sure this attribute will take a LONG time to unpack. At least it's very clear as to what it's doing, and adding a 4th value or changing each value to a percentage does exactly what you'd expect.
 - `grid-gap: 10px` is the value we've been waiting for! It's a single value that determines the space __between__ all of the grid elements. No more faking this with margins and worrying about nth-child/last-child to remove that trailing margin. 
 
 ## Math Note
-If you are looking to turn change this example from one with 100px, fixed column widths, to one where we have 3 equal columns, forget about using fractions. `grid-template-columns: 33.33% 33.33% 33.33%;` plus a grid-gap will yield a row longer than the parent grid. 
 
-Fortunately there is a new unit of measurement called the [flexible length](https://www.w3.org/TR/css3-grid-layout/#fr-unit) which is a fraction of the free space available. Sort of like flex grow, if you have `grid-tempmlate-columns: 1fr 1fr 1fr` this means each column will grow equally to fill up the available space, and you'll have a perfect gallery regardless of the gutter you decide to apply.
+If you are looking to change this example from one with 100px fixed column widths, to one where we have 3 equal columns, forget about using fractions. `grid-template-columns: 33.33% 33.33% 33.33%;` plus a grid-gap will yield a row longer than the parent grid. 
 
-<img src="/assets/img/grid-example-2.png"/>
+<p data-height="265" data-theme-id="0" data-slug-hash="vxyyxr" data-default-tab="css,result" data-user="micahgodbolt" data-embed-version="2" data-pen-title="Grid Gap Adds to Percentage Children" class="codepen">See the Pen <a href="http://codepen.io/micahgodbolt/pen/vxyyxr/">Grid Gap Adds to Percentage Children</a> by Micah Godbolt (<a href="http://codepen.io/micahgodbolt">@micahgodbolt</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+### Solution - The `fr` unit
+
+Fortunately there is a new unit of measurement called [flexible length](https://www.w3.org/TR/css3-grid-layout/#fr-unit) which is a fraction of the free space available. Sort of like flex grow `grid-tempmlate-columns: 1fr 1fr 1fr` means each column will grow equally to fill up the available space, and you'll have a perfect gallery regardless of the gutter you decide to apply.
+
+<p data-height="265" data-theme-id="0" data-slug-hash="yMVVbY" data-default-tab="css,result" data-user="micahgodbolt" data-embed-version="2" data-pen-title="Grid Gap Works with FR Units" class="codepen">See the Pen <a href="http://codepen.io/micahgodbolt/pen/yMVVbY/">Grid Gap Works with FR Units</a> by Micah Godbolt (<a href="http://codepen.io/micahgodbolt">@micahgodbolt</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
 
 ## Wrap it Up
 
 So that's it for tonight. I literally sat down, took my first look at CSS Grid, and shared with you what I'd found. Hope you enjoyed it! I'll try to share a bit more once I dive in further. From the looks of it, I could spent quite a long time on grid-templates alone. See you next time!
 
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
