@@ -36,13 +36,13 @@ In the end, we made dozens of tiny little marketing sites, which was perfect for
 
 Having gotten more into twitter in 2010, I ended up connecting with a local advertising agency over a series of CMS Made Simple tweets. This relationship turned into some freelancing work, which quickly turned into a job offer. This was a pretty amazing moment in my life. I'd only lucked into making websites at my previous job, so this was the first time that I was hired because of my ability to write code. This was also a great chance to learn about agency life: communication, project management, billable hours, and working in a team. 
 
-Over the next couple years I continued to spent time on twitter, reading blogs, listening to podcasts, as well as attening local meetup groups. I also made the decision to learn Drupal (which we were using for some projects and had a great local meetup), and teach myself Git and Sass (which, unfortunately, we weren't using at the agency). I still felt like a brand new developer, but I was gaining confidence and skills pretty quickly, able to understatnd and absorb more information with every passing month. 
+Over the next couple years I continued to spent time on twitter, reading blogs, listening to podcasts, as well as attening local meetup groups. I also made the decision to learn Drupal (which we were using for some projects and had a great local meetup), and teach myself Git and Sass (which, unfortunately, we weren't using at the agency). I still felt like a brand new developer, but I was gaining confidence and skills pretty quickly, able to understand and absorb more information with every passing month. 
 
 I eventually got to the point where I felt I wasn't learning enough at work, and started to look for something bigger. At first I felt completely underqualified, but eventually decided to put myself out there...in the most usual way possible. And that, as they say, made all the difference. 
 
 ### Lessons Learned
 
-> Connet with other people around you, however you can. You never know what job opportunities find through someone you met on twitter, or a meetup that you attend.
+> Connect with other people around you, however you can. You never know what job opportunities find through someone you met on twitter, or a meetup that you attend.
 
 > Don't stay anywhere that you aren't learning. Oftentimes in our industry you have to switch jobs to find more challenging work, and that's 100% okay. 
 
