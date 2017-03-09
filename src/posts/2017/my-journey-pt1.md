@@ -1,7 +1,7 @@
 ---
 title: From Minimum Wage to Senior Developer - Part 1
 view: post.twig
-date: 2017-02-27
+date: 2017-03-09
 ---
 
 Today I am writing this article while riding a warm, comfortable wifi enabled bus to my senior level position at one of the most desired employers on the planet. I hope that this does not come off like a brag. I'm constantly amazed at how fortunate I am to be where I am, and my imposter syndrome won't even allow me to feel supperior to a junior developer. But here I am, doing the work that I love, and getting paid really well for it. So I wanted to share a bit about my journey and write down some of the lessons I learned along the way. I'm going to share my salary information as well, not "to prove what a success I am", but to help others set expectations and demand equal pay for equivelant work.
