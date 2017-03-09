@@ -4,7 +4,7 @@ view: post.twig
 date: 2017-03-09
 ---
 
-Today I am writing this article while riding a warm, comfortable wifi enabled bus to my senior level position at one of the most desired employers on the planet. I hope that this does not come off like a brag. I'm constantly amazed at how fortunate I am to be where I am, and my imposter syndrome won't even allow me to feel supperior to a junior developer. But here I am, doing the work that I love, and getting paid really well for it. So I wanted to share a bit about my journey and write down some of the lessons I learned along the way. I'm going to share my salary information as well, not "to prove what a success I am", but to help others set expectations and demand equal pay for equivelant work.
+Today I am writing this article while riding a warm, comfortable wifi enabled bus to my senior level position at one of the most desired employers on the planet. I hope that this does not come off like a brag. I'm constantly amazed at how fortunate I am to be where I am, and my imposter syndrome won't even allow me to feel superior to a junior developer. But here I am, doing the work that I love, and getting paid really well for it. So I wanted to share a bit about my journey and write down some of the lessons I learned along the way. I'm going to share my salary information as well, not "to prove what a success I am", but to help others set expectations and demand equal pay for equivalent work.
 
 ## 2004 - $9/hour
 
@@ -28,17 +28,17 @@ In the end, we made dozens of tiny little marketing sites, which was perfect for
 
 > Nobody really knows what they're doing when they create their first website. Step out and offer to make one for your band, for your photographer friend, for your World of Warcraft guild, for your employer. Many developers can trace their career back to a single website. 
 
-> Take advantage of structured education, wether that's a bootcamp, an online course, or a 3 hour introduction at your local community college. Sometimes you learn best when you are challenged and accountable to learning.
+> Take advantage of structured education, whether that's a bootcamp, an online course, or a 3 hour introduction at your local community college. Sometimes you learn best when you are challenged and accountable to learning.
 
-> Learn a platform. I haven't used CMS Made Simple in years, but learning that CMS inside and out taugh me many things that I still use today, and was the primary reason I got my next job!
+> Learn a platform. I haven't used CMS Made Simple in years, but learning that CMS inside and out taught me many things that I still use today, and was the primary reason I got my next job!
 
 ## 2011 - $40k/year
 
 Having gotten more into twitter in 2010, I ended up connecting with a local advertising agency over a series of CMS Made Simple tweets. This relationship turned into some freelancing work, which quickly turned into a job offer. This was a pretty amazing moment in my life. I'd only lucked into making websites at my previous job, so this was the first time that I was hired because of my ability to write code. This was also a great chance to learn about agency life: communication, project management, billable hours, and working in a team. 
 
-Over the next couple years I continued to spent time on twitter, reading blogs, listening to podcasts, as well as attening local meetup groups. I also made the decision to learn Drupal (which we were using for some projects and had a great local meetup), and teach myself Git and Sass (which, unfortunately, we weren't using at the agency). I still felt like a brand new developer, but I was gaining confidence and skills pretty quickly, able to understand and absorb more information with every passing month. 
+Over the next couple years I continued to spent time on twitter, reading blogs, listening to podcasts, as well as attending local meetup groups. I also made the decision to learn Drupal (which we were using for some projects and had a great local meetup), and teach myself Git and Sass (which, unfortunately, we weren't using at the agency). I still felt like a brand new developer, but I was gaining confidence and skills pretty quickly, able to understand and absorb more information with every passing month. 
 
-I eventually got to the point where I felt I wasn't learning enough at work, and started to look for something bigger. At first I felt completely underqualified, but eventually decided to put myself out there...in the most usual way possible. And that, as they say, made all the difference. 
+I eventually got to the point where I felt I wasn't learning enough at work, and started to look for something bigger. At first I felt completely under qualified, but eventually decided to put myself out there...in the most usual way possible. And that, as they say, made all the difference. 
 
 ### Lessons Learned
 
