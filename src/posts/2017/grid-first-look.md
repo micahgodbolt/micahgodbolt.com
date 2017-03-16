@@ -24,7 +24,7 @@ I'm also glad to not see any W3schools in the top 3, though they do have listing
 
 ## A First Look at the Grid Spec
 
-First thing I needed to do was make sure that I have a browser that supports CSS Grid layout. Unfotunately, as of today, that takes a little bit of work. As you can see from [Can I Use](http://caniuse.com/#feat=css-grid), CSS Grid is right around the corner on just about every desktop browser, so the easiest way to get started with grid is to grab a copy of [Chrome Canary](https://www.google.com/chrome/browser/canary.html). There is supposed to be a flag on Chrome 56 to turn on [Experimental Web Platform features](chrome://flags/#enable-experimental-web-platform-features), but it didn't work for me, so grab Canary if you have the same trouble. 
+First thing I needed to do was make sure that I have a browser that supports CSS Grid layout. [Edited March 16th 2017] Grid has shipped in Chrome and Firefox! 
 
 Once I had a supported browser, I could now view all the grid examples I ran across at [Rachel Andrew's](https://twitter.com/rachelandrew) great grid site called [Grid By Example](http://gridbyexample.com/examples/).  
 
