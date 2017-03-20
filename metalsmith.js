@@ -6,6 +6,7 @@ var excerpts    = require('metalsmith-excerpts');
 var collections = require('metalsmith-collections');
 var feed        = require('metalsmith-feed');
 var twig        = require('metalsmith-twig');
+var sitemap     = require('metalsmith-sitemap');
 
 Metalsmith(__dirname)
   .metadata({
@@ -40,6 +41,10 @@ Metalsmith(__dirname)
   .use(twig({
     directory: 'presenters',
     cache: false
+  }))
+  .use(sitemap( {
+    hostname: "https://micahgodbolt.com",
+    omitIndex: true
   }))
   .build(function(err, files) {
     if (err) { throw err; }
