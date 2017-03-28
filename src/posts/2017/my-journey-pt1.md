@@ -16,7 +16,7 @@ Sometimes, that's all it takes, as these skills eventually lead me to a job at a
 
 ### Lessons Learned 
 
-> Get interested in computers and technology. You'll never know when the title of "computer person" will open up opportunities. 
+-  Get interested in computers and technology. You'll never know when the title of "computer person" will open up opportunities. 
 
 ## 2006 - $12/hour
 
@@ -26,11 +26,9 @@ In the end, we made dozens of tiny little marketing sites, which was perfect for
 
 ### Lessons Learned  
 
-> Nobody really knows what they're doing when they create their first website. Step out and offer to make one for your band, for your photographer friend, for your World of Warcraft guild, for your employer. Many developers can trace their career back to a single website. 
-
-> Take advantage of structured education, whether that's a bootcamp, an online course, or a 3 hour introduction at your local community college. Sometimes you learn best when you are challenged and accountable to learning.
-
-> Learn a platform. I haven't used CMS Made Simple in years, but learning that CMS inside and out taught me many things that I still use today, and was the primary reason I got my next job!
+- Nobody really knows what they're doing when they create their first website. Step out and offer to make one for your band, for your photographer friend, for your World of Warcraft guild, for your employer. Many developers can trace their career back to a single website. 
+- Take advantage of structured education, whether that's a bootcamp, an online course, or a 3 hour introduction at your local community college. Sometimes you learn best when you are challenged and accountable to learning.
+- Learn a platform. I haven't used CMS Made Simple in years, but learning that CMS inside and out taught me many things that I still use today, and was the primary reason I got my next job!
 
 ## 2011 - $40k/year
 
@@ -42,11 +40,11 @@ I eventually got to the point where I felt I wasn't learning enough at work, and
 
 ### Lessons Learned
 
-> Connect with other people around you, however you can. You never know what job opportunities find through someone you met on twitter, or a meetup that you attend.
+- Connect with other people around you, however you can. You never know what job opportunities find through someone you met on twitter, or a meetup that you attend.
+- Don't stay anywhere that you aren't learning. Oftentimes in our industry you have to switch jobs to find more challenging work, and that's 100% okay. 
+- Learn the guitar?..... More on that later.
 
-> Don't stay anywhere that you aren't learning. Oftentimes in our industry you have to switch jobs to find more challenging work, and that's 100% okay. 
-
-> Learn the guitar?..... More on that later.
-
-<iframe src="https://player.vimeo.com/video/55253397" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/55253397" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen1.</iframe>
 <p><a href="https://vimeo.com/55253397">Hello Lullabot</a> from <a href="https://vimeo.com/user15182393">Micah Godbolt</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+## [Read "From Minimum Wage to Senior Developer Part 2"](/blog/from-minimum-wage-to-senior-developer-part-1/).
