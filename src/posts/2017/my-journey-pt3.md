@@ -1,7 +1,7 @@
 ---
 title: From Minimum Wage to Senior Developer - Part 3
 view: post.twig
-date: 2017-04-04
+date: 2017-04-24
 ---
 
 Having entered 2014 with a pink slip in my inbox, there's no way I could have imagined where I'd be today. How does one go from losing a junior position (64k/year) to landing a senior position at Microsoft ([level 64](https://www.glassdoor.com/Salary/Microsoft-Level-64-Salaries-E1651_D_KO10,18.htm)) in 2 1/2 years? There's part of me that wants to say the answer is "a ton of luck", but I think a better expression is "several great opportunities and the willingness to seize them". The first of those opportunities did not require much deliberation as, after 3 weeks of job hunting, I was offered an amazing position with a DC based Drupal agency. The next opportunity though, came much quicker than I expected. My first hour of employment was spent at a sprint retro meeting with the client who's website I'd be spending the next 2 1/2 years building, and it was my willingness to seize _that_ opportunity that opened every other door.
