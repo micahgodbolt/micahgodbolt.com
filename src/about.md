@@ -41,7 +41,7 @@ I'm a Front-end Architect, author, speaker, trainer, blogger and developer from 
 
 ### Writing
 
-- [Front-end Architecture Book - O'Reilly Press](http://frontendarchitecture.info/)
+- [Front-end Architecture Book - O'Reilly Press](http://fea.pub/)
 - [Document your Design Systems with Fractal - CreativeBloq](http://www.creativebloq.com/how-to/document-your-design-systems-with-fractal)
 - [CSS Testing with PhantomCSS, PhantomJS, CasperJS and Grunt](https://www.phase2technology.com/blog/css-testing-with-phantomcss-phantomjs-casperjs-and-grunt/)
 - [Used and Abused - CSS Inheritance and Our Misuse of the Cascade](https://www.phase2technology.com/blog/used-and-abused-css-inheritance-and-our-misuse-of-the-cascade/)
