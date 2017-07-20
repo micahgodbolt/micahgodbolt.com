@@ -123,7 +123,7 @@ CSS Modules, as the name implies, uses the JavaScript import syntax to convert C
 import styles from "./v5.css";
 
 document.getElementById('userAComponent').innerHTML = `
- <div class= ${styles.unicorn}>🦄</div>
+ <div class=${styles.unicorn}>🦄</div>
  <div class=${styles.horse}>🐴</div>
 `;
 
@@ -131,7 +131,7 @@ document.getElementById('userAComponent').innerHTML = `
 import styles from "./v6.css";
 
 document.getElementById('userBComponent').innerHTML = `
- <div class= ${styles.unicorn}>🦄</div>
+ <div class=${styles.unicorn}>🦄</div>
  <div class=${styles.horse}>🐴</div>
 `;
 ```
