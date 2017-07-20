@@ -35,6 +35,11 @@ There are few possible solutionss to this problem, but only one that really make
 Using Sass it's pretty easy to import a whole mess of styles inside of a single scoping class.
 
 ```sass
+
+// my-styles.scss
+.unicorn {...}
+
+// main.scss
 .v5 { @import 'my-styles'}
 
 .v6 { @import 'my-styles'}
@@ -46,7 +51,6 @@ This will yield
 .v5 .unicorn {...}
 
 .v6 .unicorn {...};
-
 ```
 
 So now these two unicorn can live side by side.
@@ -59,7 +63,6 @@ So now these two unicorn can live side by side.
 <div class="v5">
     <div class="unicorn">🦄</div>
 <div>
-
 ```
 
 This solution works alright, but you just increased the specificity of all of your css selectors, bloated each css file, and you have to load multiple version of the CSS onto the page. Also, this solution only works as long as these components are never nested, as once you put a v5 unicorn inside of a v6 component, we're right back to css load order issue.
@@ -71,7 +74,6 @@ This solution works alright, but you just increased the specificity of all of yo
         <div class="unicorn">🦄</div>
     <div>
 <div>
-
 ```
 
 #### Add version prefix to every classname
