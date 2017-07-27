@@ -1,12 +1,12 @@
 ---
-title: Writing the Correct CSS Once is Pretty Easy
+title: Writing the Correct CSS Once is Pretty Easy - All Situations
 view: post.twig
 date: 2017-07-27
 ---
 
 Sometime back I tweeted "Writing the correct CSS once is pretty easy.  Making that CSS work in all situations, and for all people is the hard part." and it resonated with more than a few people. I'm not saying that CSS is simple, and doesn't require skill to master. I'm saying that writing the correct CSS is just the first of many steps when creating a large scale Design System. 
 
-You see, the color and height of your primary button might not change for two whole years, but the way that it is delivered and rendered might change a dozen times as you face various challengs. I want to share with you a few of the challenges I've seen design systems face, and the ways that you can conquere them.
+You see, the color and height of your primary button might not change for two whole years, but the way that it is delivered and rendered might change a dozen times as you face various challenges. I want to share with you a few of the challenges I've seen design systems face, and the ways that you can conquer them.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Writing the correct CSS once is pretty easy.  Making that CSS  work in all situations, and for all people is the hard part.</p>&mdash; Micah Godbolt (@micahgodbolt) <a href="https://twitter.com/micahgodbolt/status/864260989629353985">May 15, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -24,16 +24,15 @@ One solution that I have seen to be effective is to create a set of design token
 
 ### One Platform Multiple Systems
 
-Another difficult challenge you might come across happens when you need to support multiple systems, or multiple versions of the same system on a single platform. One of the larger ommisions in the CSS spec is a way to properly scope, or contain styles. In JavaScript we can simply `var myModule = require('someModule')` and we get all of `someModule` available to us inside of the `myModule` variable. So if we require two different modules that include a `unicorn` variable, we don't have to worry about which `unicorn` our code uses, as they'll both be scopeed under their import variable. Unfortunately, this is not the case with CSS. 
+Another difficult challenge you might come across happens when you need to support multiple systems, or multiple versions of the same system on a single platform. One of the larger omissions in the CSS spec is a way to properly scope, or contain styles. In JavaScript we can simply `var myModule = require('someModule')` and we get all of `someModule` available to us inside of the `myModule` variable. So if we require two different modules that include a `unicorn` variable, we don't have to worry about which `unicorn` our code uses, as they'll both be scoped under their import variable. Unfortunately, this is not the case with CSS. 
 
-CSS is by nature global, and because of the cascade, if you import two CSS files that both have `.unicorn` defined, the file that loads second will win. Most major frameworks have gotten around this by adding a prefix to their classes, such as `.xyz-unicorn`. While this might solve the problem of two different frameworks working together, what happens if you have an application that needs to support multiple versions of the __same__ framework on the same page? There are few possible solutionss to this problem, but only one that really makes 100% sense.
+CSS is by nature global, and because of the cascade, if you import two CSS files that both have `.unicorn` defined, the file that loads second will win. Most major frameworks have gotten around this by adding a prefix to their classes, such as `.xyz-unicorn`. While this might solve the problem of two different frameworks working together, what happens if you have an application that needs to support multiple versions of the __same__ framework on the same page? There are few possible solutions to this problem, but only one that really makes 100% sense.
 
 #### Scope styles inside a parent class
 
 Using Sass it's pretty easy to import a whole mess of styles inside of a single scoping class.
 
 ```scss
-
 // my-styles.scss
 .unicorn {...}
 
@@ -74,7 +73,7 @@ This solution works alright, but you just increased the specificity of all of yo
 <div>
 ```
 
-#### Add version suffix to every classname
+#### Add version suffix to every class
 
 Since our last example failed due to limitations in parent selectors, what if we moved the version number into the selector itself. This way we aren't adding any specificity, and components only rely on their class names for versioning, not their parent selectors.
 
@@ -96,7 +95,7 @@ Now we don't have any trouble, even when we nest components.
 <div>
 ```
 
-This is great and all, but you can imagine needing to update all of your class names (HTML and Sass) every time someone bumps the version number. With unique sets of CSS for every version, you also risk the chance of loading different versions of a component that are exactly the same CSS. Sure, you can alleviate this by versioning each component seperately, and only bump the version when that component changes, but now you're in a dependency and maintenence nightmare. 
+This is great and all, but you can imagine needing to update all of your class names (HTML and Sass) every time someone bumps the version number. With unique sets of CSS for every version, you also risk the chance of loading different versions of a component that are exactly the same CSS. Sure, you can alleviate this by versioning each component separately, and only bump the version when that component changes, but now you're in a dependency and maintenance nightmare. 
 
 So what if we could automatically generate new, unique class names for both our CSS and HTML that only changed when the actual CSS of the component changes? Well, I'm glad you asked.
 
@@ -104,7 +103,7 @@ So what if we could automatically generate new, unique class names for both our 
 
 [CSS modules](https://github.com/css-modules/css-modules) gives you all of the benefits of the above approach (single, scoped selectors) but handles the class name generation, and is smart enough to create new revisions only when the CSS changes.
 
-CSS Modules, as the name implies, uses the JavaScript import syntax to convert CSS into a JavaScript object that is accessible to your rendering engine. Class names include a hash that is based off of the styles in the selector. So the hash doesn't change unless the styles do. Do note that this example is pseudo code for a simple client side implimentation, but it could also be rendered server side if needed. 
+CSS Modules, as the name implies, uses the JavaScript import syntax to convert CSS into a JavaScript object that is accessible to your rendering engine. Class names include a hash that is based off of the styles in the selector. So the hash doesn't change unless the styles do. Do note that this example is pseudo code for a simple client side implementation, but it could also be rendered server side if needed. 
 
 ```css
 /* v5.css */
