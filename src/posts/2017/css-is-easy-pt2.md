@@ -1,7 +1,7 @@
 ---
 title: Writing the Correct CSS Once is Pretty Easy - Part 2
 view: post.twig
-date: 2017-05-15
+date: 2017-08-18
 draft: true
 ---
 
@@ -96,5 +96,6 @@ Afer this CSS is converted into a string in our React module, we replaced our to
 
 ### One Page Many Themes
 
+Coming Soon
 
 ### 
