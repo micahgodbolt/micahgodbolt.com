@@ -1,7 +1,7 @@
 ---
 title: New Year's Blogging Resolutions
 view: post.twig
-date: 2018-01-04
+date: 2018-01-03
 ---
 
 I keep hearing that 2018 is going to be the year of the personal blog, and I'd really like to see that as well. For me the thing always holding me back were my multiple blog posts that turned into blog series that ended up never being completed. It's hard to feel confident diving into another year of blogging with so many failures in the past. But then I realized what my main problem was...
