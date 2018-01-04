@@ -1,0 +1,20 @@
+---
+title: New Year's Blogging Resolutions
+view: post.twig
+date: 2018-01-04
+---
+
+I keep hearing that 2018 is going to be the year of the personal blog, and I'd really like to see that as well. For me the thing always holding me back were my multiple blog posts that turned into blog series that ended up never being completed. It's hard to feel confident diving into another year of blogging with so many failures in the past. But then I realized what my main problem was...
+
+I was trying to do WAY too much in each blog post. Obviously that's why some posts turned into a series of posts, but even then each post was __much__ too complicated, and I poured way more time into them than I needed to.
+
+So here is to 2018 and the year of short blog posts. I mean, come on. Twitter is up to 280 characters now, and I've got a feeling that some of my more popular tweets really should have been 500 character blog posts, like this one:
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">A lot of the work I do is identifying the components required to achieve a particular design, and then identifying the gaps between our current library and those components. <br><br>Thinking of designs as a combination of framework components is a powerful skill to master.</p>&mdash; Micah Godbolt (@micahgodbolt) <a href="https://twitter.com/micahgodbolt/status/948656192187899904?ref_src=twsrc%5Etfw">January 3, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+So to start off 2018, I just want to say that a lot of the work I do is identifying the components required to achieve a particular design, and then identifying the gaps between our current library and those components. Thinking of designs as a combination of framework components is a powerful skill to master. 
+
+My process typically involves hacking together the desired design, trying to use as many off the shelf components as possible, and then once I'm done I look back at all the ugly hacks it took to finish the design, and identify ways to improve components to require less hacks.
+
+The more you do this process, the more capable your components become, and more often, your prototypes will require fewer and fewer hacks.
