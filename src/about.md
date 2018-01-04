@@ -7,7 +7,7 @@ position: 99
 
 # About Micah Godbolt
 
-I'm a Front-end Architect, author, speaker, trainer, blogger and developer from the Seattle area. If you are interested in having me speak at your conference, write for your publication, put on a training session or consult on your next project, check out the links below and drop me a line.
+I'm a Front-end Architect, author, speaker, trainer, blogger and developer from the Portland area. If you are interested in having me speak at your conference, write for your publication, put on a training session or consult on your next project, check out the links below and drop me a line.
 
 
 ## Contact Me
@@ -20,18 +20,20 @@ I'm a Front-end Architect, author, speaker, trainer, blogger and developer from 
 
 ### Speaking
 
-- [DrupalCon Prague 2013](https://prague2013.drupal.org/session/creating-responsive-drupal-prototypes-angularjs.html)
-- [DrupalCon LA 2015](https://events.drupal.org/losangeles2015/sessions/new-design-workflow)
+- [CSS Dev Conf 2017 - Design Systems 2.0: Creating Consistent Interfaces](https://cssdevconf2017.sched.com/event/AnjM/design-systems-20-creating-consistent-interfaces-designsys2)
+- [Generate Conf London 2016 - Road Runner Rules - Guidelines for Design Systems](https://www.youtube.com/watch?v=CnspEEQqb3w)
 - [DrupalCon New Orleans 2016](https://bit.ly/road-runner-rules)
-- CSS Dev Conf 2013 - Get Your Sass In Line
-- [CSS Dev Conf 2014 - Raising a Banner for Front-end Architecture](https://teamtreehouse.com/library/raising-a-banner-for-the-frontend-architect)
+- [DrupalCon LA 2015](https://events.drupal.org/losangeles2015/sessions/new-design-workflow)
 - [CSS Dev Conf 2015 - Visual Regression Testing](https://www.youtube.com/watch?v=7RxjhaPlRw4)
-- Sass Summit 2014 - Putting It All Together with Sass
 - Front-end Summit 2015 - Creating Workflows with Grunt
-- [Generate Conf London - Road Runner Rules - Guidelines for Design Systems](https://www.youtube.com/watch?v=CnspEEQqb3w)
+- Sass Summit 2014 - Putting It All Together with Sass
+- [CSS Dev Conf 2014 - Raising a Banner for Front-end Architecture](https://teamtreehouse.com/library/raising-a-banner-for-the-frontend-architect)
+- [DrupalCon Prague 2013](https://prague2013.drupal.org/session/creating-responsive-drupal-prototypes-angularjs.html)
+- CSS Dev Conf 2013 - Get Your Sass In Line
 
 ### Training
-- Generate Conf London - Frontend Architecture for Design Systems
+- CSS Dev Conf 2017 - Design Systems Workshop
+- Generate Conf London 2016 - Frontend Architecture for Design Systems
 - CSS Dev Conf 2015 - Visual Regression Testing Workshop
 - [SassBites Podcast](https://www.youtube.com/user/sassbites)
   - [Intro to Flex Box](https://www.youtube.com/playlist?list=PLJKslvBeWd2ZakfNjMo8ZZup3IMrxeTG0)
