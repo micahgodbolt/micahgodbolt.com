@@ -38,11 +38,51 @@ Too much facetime (working in an office) devalues how amazing it is to spend tim
 
 ## Other musings
 
+
+### Handling Distractions
+
 A lot of people wonder how it's possible to work from home with all of those possible distractions. Personally, I've never been too worried by them. I typically embrace them. Walk my daughter to the bus? That's a win in my book. Make my son lunch? Another win. Talk with my wife about an upcoming field trip she wants to chaperone? I'm glad I was there for that! 
 
 Despite the various distractions I face throughout the day, I also think of all of the distractions that I miss by not being in an office. Want my attention? Sorry, you can't walk into my office. You can email me or ping me on Teams. My entire work day is async. No one expects or demands my immediate attention. Sometimes I'll get a message that demands immediate attention, and I will drop what I'm doing to help them out, but that's my choice. 
 
 Also, I really love working from a coffee shop for the morning or afternoon. Working remote doesn't always mean working from home. But if you are working from home, be sure to spend some time on your office. Yes, working from the kitchen table can be difficult with a busy household! But if you have a room where you can close the door, put on some headphones, and create some personal space....getting into the groove is easier than it is in the office.
+
+### Essential Tools
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Essential tools you can&#39;t imagine working remotely without!</p>&mdash; Ben Hong (@bencodezen) <a href="https://twitter.com/bencodezen/status/950644626020622336?ref_src=twsrc%5Etfw">January 9, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+Thanks to [Ben Hong](https://twitter.com/bencodezen) for the question about essential tools. I'll give a quick answer here, though I should do a longer micahgodbolt.com/uses post sometime soon.
+
+1. Good headphones! I put this at #1 because it is seriously #1. You'll spend a good bit of your day with headphones on, either to be listening to music, or attending conference calls. You need to be able to listen comfortably for a long period of time as well as communicate effectively when it comes time to talk. So make sure they are comfortable. Wireless is okay, but be sure to have a backup if they die in the middle of the day. Don't rely on your laptop microphone or the inline mic in ear buds. I went with a pair of [Sennheiser GAME ONE headphones](https://www.amazon.com/gp/product/B00KK8ZLEC/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1). They are a little pricey, but for something I use everyday, they have been wonderful. Great sound, great retractable microphone, and you don't look rediculous on a conference call like you would if you wore [these monstrocities](https://www.amazon.com/dp/B01MA5XZSG/ref=sr_1_2_twi_col_2?s=electronics&ie=UTF8&qid=1515513048&sr=1-2&keywords=gaming+headphones).
+
+2. Dedicate office space. I said it above, and it isn't exactly a physical tool, but having a dedicate office space is really important to making long term remote work. It's a space you can enter to turn on 'work mode'. This helps family to know when they can, and shouldn't bother you. A home office is also something to take pride in. Decorate, make it comfortable, work towards the optimal monitor/desk setup. It's your space, make it somewhere you enjoy working.
+
+3. Back to 'tools', other than good hardware, you NEED to have good software. If all you have to connect with co-workers is email, you're in for a world of hurt. Chat software (Slack, Teams, Hipchat, Flowdock), project management, video/audio chat, document collaboration, code collaboration. If there's a missing gap, work towards filling it.
+
+4. Good A/V hardware at the office. As I mentioned above, a laptop dialed into the Skype meeting isn't a great conferencing tool if there are a dozen people in the room...and even worse if the laptop user is typing, taking notes! Either make sure that the main office spaces used for video calls have dedicated A/V hardware, or at least ask your team to invest in a [USB Speakerphone](https://www.amazon.com/Jabra-Speak-410-Speakerphone-Lync/dp/B004ELA7TA) to get the microphone/speaker into a central location, away from any typing keys.
+
+### Going remote at a traditionally non remote company
+
+Another great question popped into my twitter feed from [Michael Head](https://twitter.com/michaelehead) who asked:
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">How to land one of those jobs with a tech company that largely prefers collocation (every MS job I see is onsite).</p>&mdash; Michael Head (@michaelehead) <a href="https://twitter.com/michaelehead/status/950707300129533952?ref_src=twsrc%5Etfw">January 9, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+My story at Microsoft is that I initially lobbied for a remote position when I was about to accept their offer. Unfortunately, the team I was going to be working with was pretty adamant that I be on site. To be honest, it was probably a good thing that I was on site for that first year. In a large, non-remote org, there is usually a TON of value placed on relationships and reputation, both of which are hard to do if you are one of the only remote employees. And after spending a few months with my team, I started to understand that it wasn't my ability to do my work remotely that was the concern, it was the teams ability to get the most value out of me. This team was simply used to having everyone within a few minutes walk, and were nowhere near equipped to handle the async or audio/video communication with remote team members.
+
+#### Getting the remote position
+
+As for how I landed a remote position in a typically non-remote company, it mostly came down to building a reputation, being patient and being persistent.
+
+I was fortunate to be working on a project that was much bigger than the department I 'worked' in. Working on a Design System (Fabric) meant that I was working with teams all over the company, and that my role entailed helping these other teams get set up and working with Fabric. So when I was looking at other departments, hoping to find something remote, you could say that I had a "very particular set of skills" that other groups were looking for. I eventually found a team that was already used to collaborating with people in Canada, the midwest, Europe, so when the topic of remote came up, and they saw the experience I could bring to the team, it was a bit of a no brainer. 
+
+So I guess the takeaway points are: 
+
+1. Don't expect to find remote positions published by large non-remote companies. You'll need to 'earn' and then seek out those opportunities by either building up your reputation in the industry, or within the company. If I'd applied for the job I have currently without my year of experience at Microsoft, I might have gotten the job, but I am pretty confident it wouldn't have been remote.
+
+2. It doesn't hurt to ask about remote. If you aren't in a rush to find work (i.e. currently employed), take your time, be patient and be persistent. I asked a dozen different departments about remote before I found one that wanted me more than they wanted me in the office. 
 
 
 
