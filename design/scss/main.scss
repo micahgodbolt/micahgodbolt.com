@@ -7,7 +7,8 @@ html {
     background-color: $color-page;
     font-size: calc( 16px + (8) * (100vw - 320px) / 800 ); 
     margin: 0 auto; 
-    font-family: sans-serif;
+    line-height: 1.4;
+    font-family: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
     @media screen and (min-width: 820px){
         font-size: 21px;
     }
