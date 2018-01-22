@@ -1,0 +1,27 @@
+---
+title: Changing Your Worldview
+view: post.twig
+date: 2018-01-22
+---
+
+Every now and again, I compose a tweet really resonates with my peers. Sometimes I sorta expect it, and other times it's out of the blue. But everytime I do strike that nerve, I'm reminded that a large number of people feel that what I said was important, and if it really is that important, it should probably make its way into a blog! I'm sure I have dozens of old tweets that should be turned into blogs, but for today, I'm going to start with just this one: How making a small demographic change in who I follow on twitter has completely changed my worldview.
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">I&#39;m loving seeing all of the incredibly smart women taking over my twitter feed. It&#39;s a reminder of the biases that I have because my feed was previously dominated by men. Now when I think of incredibly talented engineers, ops, scientists, my first thoughts aren&#39;t always men.</p>&mdash; Micah Godbolt (@micahgodbolt) <a href="https://twitter.com/micahgodbolt/status/953747040827097088?ref_src=twsrc%5Etfw">January 17, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## I was born a middle class white child
+
+As a white cis het male who grew up with a ton of cis het white male friends, my world view was pretty distorted. I had several moments in my past where I realized a view I had held was actually horribly wrong. Fortunately, I was more than willing to quickly change them. But some views, or rather biases, are hard to identify and even harder to simply "solve". 
+
+One of those such biases had to do with my profession, and the different roles I expected people played in them. I've never had the thought in my brain that women were incapable of being engineers, mathematicians, or scientists, but because I so rarely encountered them in my social circles, I started to build up subtle, unnoticed expectations of what those in my profession looked like. If you asked me to picture a developer, I would inherently think of a white cis het male, like myself.
+
+Fortunately, over the past several years, my social circle has grown, and my twitter feed has evolved into an amazing mix of gay, poly, bi, trans, non-binary, Asian, Indian, Black, Native American, disabled and other descriptors that aren't me! This change means that my social feed is hitting on issues, concerns, procedures, terminology that I would never have been exposed to before. But I think the one thing that has impacted my social circle the most is that I am now following a great deal more women in highly technical roles. I've followed a decent number of women in roles such as design, content strategy, UX etc for some time, but the lack of women in highly technical roles streaming down my feed left me with some horribly incorrect biases.
+
+Those incorrect biases are:
+
+1. "Women are capable of doing technical work, but it doesn't seem to come naturally." BULLSHIT! Stop it my past self. Just stop. I only think this way because of the lack of diversity in all of the dev teams I've ever been on, conferences I've attended, and meetups I've gone to. The truth is that there are a ton of women out there doing amazing, technical work, that I should aspire to be like. If I just take the time to actually surround myself with just a few of them, my world view will change quickly (and yours will to)!
+2. "The women who best succeed in technical roles are those with the most masculine personalities". Another BULLSHIT bias past self. Just stop! Women don't have to change who they are to be good at what they do. Technical people aren't inherently masculine. Some of my 'woke'est moments recently have been seeing very feminine women run circles around me in technical fields. I'm simply in awe of their talent, and they are NOTHING like this cis het white male over here.
+
+## Next steps
+
+For me, my next step is to continue to balance the feed of voices that I follow. And you can't simply look at following stats, because some voices are much louder than others. If there is a missing voice in my feed (even if I follow several of those voices), I still need to follow more. I won't stop diversifying my world view until my perception of a developers, a dev evangelist, a dev lead, a scientist, a mathematician, an astronaut, a chemist, a bio-engineer.....until a white cis het male is the last thing I picture when I think of a technical person. It's not because being "me" in this profession is wrong, but because I have so many other examples of people in this role who are different from me, and I just have too many amazing people to picture before getting back to thinking of myself.
