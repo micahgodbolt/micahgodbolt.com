@@ -7,7 +7,7 @@ position: 99
 
 # About Micah Godbolt
 
-I'm a Front-end Architect, author, speaker, trainer, blogger and developer from the Portland area. If you are interested in having me speak at your conference, write for your publication, put on a training session or consult on your next project, check out the links below and drop me a line.
+Micah Godbolt is a Design System Advocate, author, speaker, trainer, blogger and developer from the Portland area. He has built design systems for companies like Red Hat and Microsoft, and is passionate about seeing design systems empower designers, developers and managers to take ownership in their sites and applications.
 
 
 ## Contact Me

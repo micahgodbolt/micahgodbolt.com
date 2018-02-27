@@ -1,0 +1,33 @@
+---
+title: Design Systems - Components vs Abstractions
+view: post.twig
+date: 2018-02-26
+---
+
+Many of my blog posts originate as a good tweet, and this one is no different. Recently I'd been working with a large system of "components" that were very difficult to import, render and test outside of the monolithic application they were built for. I surmised that until we could make significant changes, we didn't have a system of components but simply a collection of abstractions.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Any component that can not/is not rendered outside of your application is not actually a component, but a code abstraction.<br><br>Components need to be cataloged and visible to everyone on your team or they don&#39;t exist.</p>&mdash; Micah Godbolt (@micahgodbolt) <a href="https://twitter.com/micahgodbolt/status/963890329425297408?ref_src=twsrc%5Etfw">February 14, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+## Importable
+
+```bash
+$ npm install the-design-system
+```
+
+That's as much effort as it should ever take to install components from your design system. Any dependency that your system relies on should also be installed at this time.
+
+Once that's done it should be this simple to use the components without a single error.
+
+```js
+import { Button } from 'the-design-system'; 
+```
+
+## Renderable
+
+Abstractions are great, frameworks are too, but if you need to spend hours writing custom configurations for your pattern library to properly render a component, you are creating a huge roadblock to turning your abstractions into components. Pattern libraries should simply be another application that is taking a dependency on your components. Make sure you aren't making a ton of work for every downstream application that isn't your primary application. 
+
+## Testable
+
+Components need to be able to render fully on their own, apart from database, backend, or any other local or cloud based infrastructure. All data should be mock-able, and no component should be making API calls that you wouldn't be willing to put in a public Github repo. If most of the components functionality can only be experienced in the application you're making it incredibly difficult to QA, test and make sound modifications.
