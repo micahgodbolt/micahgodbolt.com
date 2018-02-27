@@ -9,7 +9,7 @@ position: 100
 
 ### Description 
 
-In this workshop we will break down of a small Vue.js Todo application into a published pattern library of reusable, testable, documented components. Along the way we will learn about how design systems are built, how the code and teams are organized, and how you can take your own design system from a grassroots project to a market shifting force.  
+In this workshop we will break a small Vue.js Todo app down into a published pattern library of reusable, testable, documented components. Along the way we will learn how design systems are built, how the code and teams are organized, and how you can take your own design system from a grassroots project to a market shifting force.
 
 
 ### Benefits
