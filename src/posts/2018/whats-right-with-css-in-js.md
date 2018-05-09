@@ -4,7 +4,7 @@ view: post.twig
 date: 2018-05-09
 ---
 
-The first time I heard about CSS in JS I thought it was interesting but absurd. It was limited to producing inline styles, and introduced nasty workarounds to support pseudo selectors like `:hover` and `:after`. So when Brad wrote about [What's wrong with css-in-js](http://bradfrost.com/blog/link/whats-wrong-with-css-in-js/), on one hand I completely empathized with his frustrations. But on the other hand I had spent the past 2 years seeing the limitations of traditional, build time, CSS styling and had fully embraced the css-in-js model that [Microsoft Fabric UI](https://developer.microsoft.com/en-us/fabric) had adopted. I wanted to quickly jot down my thoughts of why Brad is partly correct, partly incorrect...but hasn't seen everything yet.
+The first time I heard about CSS in JS I thought it was interesting but absurd. It was limited to producing inline styles, and introduced nasty workarounds to support pseudo selectors like `:hover` and `:after`. So when Brad wrote about [What's wrong with css-in-js](http://bradfrost.com/blog/link/whats-wrong-with-css-in-js/), on one hand I completely empathized with his frustrations. But on the other hand I had spent the past 2 years seeing the limitations of traditional, build time, CSS styling and had fully embraced the css-in-js model that [Microsoft Fabric UI](https://developer.microsoft.com/en-us/fabric) had adopted. I wanted to quickly jot down my thoughts of why Brad is partly correct, partly incorrect...but mostly,just hasn't seen everything yet.
 
 ## Obligatory Rebuttals
 
