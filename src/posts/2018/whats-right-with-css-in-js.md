@@ -4,11 +4,11 @@ view: post.twig
 date: 2018-05-09
 ---
 
-The first time I heard about CSS in JS I thought it was interesting but absurd. It was limited to producing inline styles, and introduced nasty workarounds to support pseudo selectors like `:hover` and `:after`. So when Brad wrote about [What's wrong with css-injs](http://bradfrost.com/blog/link/whats-wrong-with-css-in-js/), on one hand I completely empathised with his frustrations. But on the other hand I had spent the past 2 years seeing the limitations of traditional, build time, CSS styling and had fully embraced the css-in-js model that [Microsof Fabric UI](https://developer.microsoft.com/en-us/fabric) had adopted. I wanted to quickly jot down my thoughts of why Brad is partly correct, partly incorrect...but hasn't seen everything yet.
+The first time I heard about CSS in JS I thought it was interesting but absurd. It was limited to producing inline styles, and introduced nasty workarounds to support pseudo selectors like `:hover` and `:after`. So when Brad wrote about [What's wrong with css-in-js](http://bradfrost.com/blog/link/whats-wrong-with-css-in-js/), on one hand I completely empathized with his frustrations. But on the other hand I had spent the past 2 years seeing the limitations of traditional, build time, CSS styling and had fully embraced the css-in-js model that [Microsoft Fabric UI](https://developer.microsoft.com/en-us/fabric) had adopted. I wanted to quickly jot down my thoughts of why Brad is partly correct, partly incorrect...but hasn't seen everything yet.
 
-## Obligatory Rebuttle
+## Obligatory Rebuttals
 
-Brad highlighted three different frustrations with css-in-js, so before I dive into how Fabric tackles this subject, let me drop in a few rebuttles.
+Brad highlighted three different frustrations with css-in-js, so before I dive into how Fabric tackles this subject, let me drop in a few rebuttals.
 
 ### Portability
 
@@ -25,14 +25,14 @@ Secondly, I agree that writing our styles in JavaScript makes them less accessib
 }
 ```
 
-This can be conerted into the following with tools like [Theo](https://github.com/salesforce-ux/theo):
+This can be converted into the following with tools like [Theo](https://github.com/salesforce-ux/theo):
 
 ```sass
 $button-background: green;
 $button-text: white;
 ```
 
-Lastly, his concern that this will make updating a simple button a herculean task is understandable....unless you take the opportunity to create global, and/or local interfaces into each component. These interfaces allow the user of the component to provide overrides that either effect all components (change default text size to 18px), or just a single component (change the font size of a single button to 18px). These interfaces are actually BETTER than what we traditionally have with CSS, as we never have to wonder what combination of css selectors will be specific enough to override the default styles.
+Lastly, his concern that this will make updating a simple button a herculean task is understandable....unless you take the opportunity to create global, and/or local interfaces into each component. These interfaces allow the user of the component to provide overrides that either effect all components (change default text size to 18px), or just a single component (change the font size of a single button to 18px). These interfaces are actually BETTER than what we traditionally have with CSS, as we never have to wonder what combination of CSS selectors will be specific enough to override the default styles.
 
 We provide global theming functionality in Fabric with the [loadTheme function](https://developer.microsoft.com/en-us/fabric#/components/themes)
 
@@ -47,13 +47,13 @@ loadTheme({
 });
 ```
 
-See it in action in [this Codepen](https://codepen.io/micahgodbolt/pen/dederq).
+See it in action in [this CodePen](https://codepen.io/micahgodbolt/pen/dederq).
 
 ### Context Switching
 
 Some of the css-in-js examples that Brad pointed to in fact DID have context switching issues in that...well there was no switching! It was just a single file of business logic, markup and styles. This really doesn't have anything to do with css-in-js though, it's just an enhanced version of inline styles, which have their place and time. We don't know if this code is simply a prototype, or actually something in production.
 
-Regardless of your opinion of inline styles, css-in-js doesn't mean our concerns can't be seperated. In Fabric our styles are always written in seperate files. And if you understand Sass, you will have little trouble reading our css-in-js styles. Here's a quick sample from our [SearchBox Styles file](https://github.com/OfficeDev/office-ui-fabric-react/blob/master/packages/office-ui-fabric-react/src/components/SearchBox/SearchBox.styles.tsx#L13).
+Regardless of your opinion of inline styles, css-in-js doesn't mean our concerns can't be separated. In Fabric our styles are always written in separate files. And if you understand Sass, you will have little trouble reading our css-in-js styles. Here's a quick sample from our [SearchBox Styles file](https://github.com/OfficeDev/office-ui-fabric-react/blob/master/packages/office-ui-fabric-react/src/components/SearchBox/SearchBox.styles.tsx#L13).
 
 ```js
 root: [
@@ -76,11 +76,11 @@ I agree that you'll sometimes find JavaScript developers writing markup and styl
 
 ## What's actually right with css-in-js
 
-With [Microsof Fabric UI](https://developer.microsoft.com/en-us/fabric) we faced a pretty unique challenge in that we were producing incredibly functional components that happened to include styling based on the Office design language. These components, such as [DetailsList](https://developer.microsoft.com/en-us/fabric#/components/detailslist), [ComboBox](https://developer.microsoft.com/en-us/fabric#/components/ComboBox) and [PeoplePicker](https://developer.microsoft.com/en-us/fabric#/components/peoplepicker) are valuable because they give you something that looks like Office out of the box, but 90% of their value is in the functionality they provide. Due to that distribution of value, there are many situations where product teams would like to use our components, but they want that ComboBox to match their own flavor of design language. This is not an occassional ask, this is a constant ask! So here were our options:
+With [Microsoft Fabric UI](https://developer.microsoft.com/en-us/fabric) we faced a pretty unique challenge in that we were producing incredibly functional components that happened to include styling based on the Office design language. These components, such as [DetailsList](https://developer.microsoft.com/en-us/fabric#/components/detailslist), [ComboBox](https://developer.microsoft.com/en-us/fabric#/components/ComboBox) and [PeoplePicker](https://developer.microsoft.com/en-us/fabric#/components/peoplepicker) are valuable because they give you something that looks like Office out of the box, but 90% of their value is in the functionality they provide. Due to that distribution of value, there are many situations where product teams would like to use our components, but they want that ComboBox to match their own flavor of design language. This is not an occasional ask, this is a constant ask! So here were our options:
 
 ### Provide the components as is and expect them to override with CSS
 
-If you've ever maintained a framework where people would customize it with CSS, you know how painful this can be. You never know what you'll break by doing something as simple as adding/removing a wrapper div, or rearanging a couple elements. As soon as your users feel they can't trust your components  you'll start losing them.
+If you've ever maintained a framework where people would customize it with CSS, you know how painful this can be. You never know what you'll break by doing something as simple as adding/removing a wrapper div, or rearranging a couple elements. As soon as your users feel they can't trust your components  you'll start losing them.
 
 Cancel button is red as expected:
 
@@ -169,6 +169,6 @@ const styles = (hasInput) => {
 
 ## Why this all matters
 
-JavaScript has always been a proving ground. We write code that simulates how we want the web to work. We had dozens of different JavaScript based responsive image solutions before a spec was settled on and adopted by browsers. css-in-js is the development community trying to imagine how CSS should work in the future to solve a specfic set of problems.
+JavaScript has always been a proving ground. We write code that simulates how we want the web to work. We had dozens of different JavaScript based responsive image solutions before a spec was settled on and adopted by browsers. css-in-js is the development community trying to imagine how CSS should work in the future to solve a specific set of problems.
 
-I'm hoping that the patterns we discover during this phase of web development will lead to better web technologies in the future. We've all identified these problems, and we're all working towards solutions. Hopefully some combination of css custom properties, web components will obviate the need for css-in-js. But until then, we're going to keep experimenting with the best ways to solve these problems. 
+I'm hoping that the patterns we discover during this phase of web development will lead to better web technologies in the future. We've all identified these problems, and we're all working towards solutions. Hopefully some combination of CSS custom properties, web components will obviate the need for css-in-js. But until then, we're going to keep experimenting with the best ways to solve these problems.
