@@ -59,7 +59,7 @@ a:not([class]) {
 
 blockquote {
     color: $color-page;
-    background: $color-primary;
+    background: $color-primary-light;
     margin: 1em 0;
     padding: .5em 1em;
     p:last-child {
@@ -75,7 +75,7 @@ p > code, ul code {
     padding: .1em .3em;
 }
 pre, 
-p > code, ul code{
+p > code, ul code {
     color: $color-page;
     background: $color-primary-light; 
     overflow-x: scroll; 
