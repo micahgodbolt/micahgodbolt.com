@@ -4,13 +4,14 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-typescript`,
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-netlify-cms`,
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        spaceId: `scrb5nqyy4vx`,
-        // Learn about environment variables: https://gatsby.app/env-vars
-        accessToken: 'ce5d874f2ee4f8180b5e925845cad644a8f102096fbc11487763292554df3297',
-      },
-    },
-  ],
+        path: `${__dirname}/blog`,
+        name: 'markdown-pages',
+      }
+    }
+  ]
 }
