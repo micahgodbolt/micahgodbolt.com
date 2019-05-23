@@ -11,6 +11,9 @@ interface IIndexProps {
     allMarkdownRemark: {
       edges: {
         node: {
+          fields: {
+            slug: string;
+          };
           excerpt: string;
           frontmatter: {
             date: string;
@@ -31,15 +34,20 @@ export default (props: IIndexProps) => {
       <h1>Welcome to {data.site.siteMetadata.title}</h1>
       <ul>
         {posts.map((post, i) => {
-          const { node } = post;
-          const title = node.frontmatter.title;
+          const {
+            node: {
+              frontmatter: { title, date },
+              excerpt,
+              fields: { slug }
+            }
+          } = post;
           return (
             <li key={i}>
               <h3>
-                <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
+                <Link to={slug}>{title}</Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
-              <p> {node.excerpt} </p>
+              <small>{date}</small>
+              <p> {excerpt} </p>
             </li>
           );
         })}
@@ -59,6 +67,9 @@ export const pageQuery = graphql`
       edges {
         node {
           excerpt
+          fields {
+            slug
+          }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title

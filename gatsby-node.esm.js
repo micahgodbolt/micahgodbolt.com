@@ -1,9 +1,9 @@
 import path from "path";
-import { graphql } from "gatsby";
+import {createFilePath} from 'gatsby-source-filesystem'
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
-  const blogPostTemplate = path.resolve("src/templates/blog-entry.tsx");
+  const blogEntry = path.resolve("src/templates/blog-entry.tsx");
   return graphql(`
     {
       allMarkdownRemark(
@@ -12,9 +12,9 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
-            excerpt(pruneLength: 250)
-            html
-            id
+            fields {
+              slug
+            }
             frontmatter {
               path
             }
@@ -26,12 +26,38 @@ exports.createPages = ({ actions, graphql }) => {
     if (result.errors) {
       return Promise.reject(result.errors);
     }
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+
+    const posts = result.data.allMarkdownRemark.edges;
+
+    posts.forEach((post, index) => {
+      const previous =
+        index === posts.length - 1 ? null : posts[index + 1].node;
+      const next = index === 0 ? null : posts[index - 1].node;
+
       createPage({
-        path: node.frontmatter.path,
-        component: blogPostTemplate,
-        context: {}
+        path: post.node.fields.slug,
+        component: blogEntry,
+        context: {
+          slug: post.node.fields.slug,
+          previous,
+          next
+        }
       });
     });
+
+    return null;
   });
+};
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode });
+    createNodeField({
+      name: `slug`,
+      node,
+      value: `/blog${value}`
+    });
+  }
 };
