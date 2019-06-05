@@ -1,5 +1,5 @@
 import path from "path";
-import {createFilePath} from 'gatsby-source-filesystem'
+import { createFilePath } from "gatsby-source-filesystem";
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -30,17 +30,12 @@ exports.createPages = ({ actions, graphql }) => {
     const posts = result.data.allMarkdownRemark.edges;
 
     posts.forEach((post, index) => {
-      const previous =
-        index === posts.length - 1 ? null : posts[index + 1].node;
-      const next = index === 0 ? null : posts[index - 1].node;
 
       createPage({
         path: post.node.fields.slug,
         component: blogEntry,
         context: {
-          slug: post.node.fields.slug,
-          previous,
-          next
+          slug: post.node.fields.slug
         }
       });
     });

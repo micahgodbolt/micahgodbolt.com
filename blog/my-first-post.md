@@ -4,8 +4,6 @@ title: Launch Early, Iterate Often
 date: 2012-10-03
 ---
 
-# Hello
-
 After months of sitting on an updated Godbolt.me, I finally decided that today was the day to stop hiding in my MAMP install and get it out there. I know it's not perfect, I know there is much more I plan to do with it. But as any startup will tell you, get your product out there, get feedback, and then iterate. So that's the plan. Just enough functionality to not look like a total fool, and plenty of room to grow!
 
 ## More stuff
