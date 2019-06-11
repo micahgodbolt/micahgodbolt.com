@@ -1,20 +1,14 @@
 import path from "path";
-import {createFilePath} from 'gatsby-source-filesystem'
+import { createFilePath } from "gatsby-source-filesystem";
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
   const blogEntry = path.resolve("src/templates/blog-entry.tsx");
   return graphql(`
     {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+      allMdx(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
         edges {
           node {
-            fields {
-              slug
-            }
             frontmatter {
               path
             }
@@ -27,18 +21,19 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges;
+    const posts = result.data.allMdx.edges;
 
     posts.forEach((post, index) => {
+      console.log(post.node.frontmatter.path);
       const previous =
         index === posts.length - 1 ? null : posts[index + 1].node;
       const next = index === 0 ? null : posts[index - 1].node;
 
       createPage({
-        path: post.node.fields.slug,
+        path: post.node.frontmatter.path,
         component: blogEntry,
         context: {
-          slug: post.node.fields.slug,
+          slug: post.node.frontmatter.path,
           previous,
           next
         }
@@ -47,17 +42,4 @@ exports.createPages = ({ actions, graphql }) => {
 
     return null;
   });
-};
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
-    createNodeField({
-      name: `slug`,
-      node,
-      value: `/blog${value}`
-    });
-  }
 };
