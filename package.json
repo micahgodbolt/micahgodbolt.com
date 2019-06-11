@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
+    "scaffold": "yo .yeoman/",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
@@ -38,7 +39,10 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
-    "react-markdown": "^4.0.8"
+    "react-markdown": "^4.0.8",
+    "yeoman-generator": "^4.0.1",
+    "yo": "^2.0.6",
+    "yosay": "^2.0.2"
   },
   "repository": {
     "type": "git",
