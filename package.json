@@ -9,31 +9,36 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.0.19",
     "@mdx-js/react": "^1.0.16",
     "@types/graphql": "^14.2.0",
-    "@types/node": "^11.9.4",
-    "@types/react": "^16.8.6",
+    "@types/node": "^11.13.13",
+    "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
     "@types/react-helmet": "^5.0.8",
+    "@types/storybook__react": "^4.0.1",
+    "awesome-typescript-loader": "^5.2.1",
     "esm": "^3.2.25",
-    "gatsby": "^2.6.0",
+    "gatsby": "^2.7.5",
     "gatsby-link": "^2.1.1",
     "gatsby-mdx": "^0.6.3",
     "gatsby-plugin-netlify-cms": "^3.0.18",
     "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-typescript": "^2.0.8",
+    "gatsby-plugin-typescript": "^2.0.15",
     "gatsby-remark-prismjs": "^3.2.9",
+    "gatsby-source-airtable": "^2.0.8",
     "gatsby-source-filesystem": "^2.0.37",
-    "gatsby-transformer-remark": "^2.2.5",
+    "gatsby-transformer-remark": "^2.3.12",
     "netlify-cms": "^2.9.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
-    "react-markdown": "^4.0.6"
+    "react-markdown": "^4.0.8"
   },
   "repository": {
     "type": "git",
@@ -41,5 +46,14 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@storybook/react": "^5.0.11",
+    "babel-loader": "^8.0.6",
+    "typescript": "^3.5.1"
   }
 }

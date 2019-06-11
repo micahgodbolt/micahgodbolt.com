@@ -3,9 +3,7 @@ import { Link, graphql, useStaticQuery } from "gatsby";
 import { MDXRenderer } from "gatsby-mdx";
 
 export const BlogEntry = (props: any) => {
-  console.log(props.data.mdx);
   const post = props.data.mdx;
-  const { previous, next } = props.pageContext;
 
   return (
     <div className="blog-post-container">

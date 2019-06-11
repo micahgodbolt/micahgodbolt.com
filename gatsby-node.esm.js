@@ -24,18 +24,11 @@ exports.createPages = ({ actions, graphql }) => {
     const posts = result.data.allMdx.edges;
 
     posts.forEach((post, index) => {
-      console.log(post.node.frontmatter.path);
-      const previous =
-        index === posts.length - 1 ? null : posts[index + 1].node;
-      const next = index === 0 ? null : posts[index - 1].node;
-
       createPage({
         path: post.node.frontmatter.path,
         component: blogEntry,
         context: {
-          slug: post.node.frontmatter.path,
-          previous,
-          next
+          slug: post.node.frontmatter.path
         }
       });
     });

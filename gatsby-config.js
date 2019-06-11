@@ -15,6 +15,18 @@ module.exports = {
         path: `${__dirname}/blog`,
         name: "blog"
       }
+    },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: "keyBNWqUbDnIuWA2g",
+        tables: [
+          {
+            baseId: "appInxhv8w9saEAIZ",
+            tableName: "Speaking"
+          }
+        ]
+      }
     }
   ]
 };
