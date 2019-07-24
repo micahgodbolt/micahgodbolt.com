@@ -5,5 +5,6 @@ dos: |-
   These are the **dos** 
 
   ![alt text](/assets/checkbox.gif "title")
+status: This is status!
 ---
 This is the body
