@@ -8,9 +8,12 @@ interface IIndexProps {
         title: string;
       };
     };
-    allMdx: {
+    allMarkdownRemark: {
       edges: {
         node: {
+          fields: {
+            slug: string;
+          };
           excerpt: string;
           frontmatter: {
             date: string;
@@ -25,7 +28,7 @@ interface IIndexProps {
 
 export default (props: IIndexProps) => {
   const { data } = props;
-  const posts = data.allMdx.edges;
+  const posts = data.allMarkdownRemark.edges;
   return (
     <div>
       <h1>Welcome to {data.site.siteMetadata.title}</h1>
@@ -35,7 +38,7 @@ export default (props: IIndexProps) => {
           const {
             node: {
               frontmatter: { title, date, path },
-              excerpt
+              excerpt,
             }
           } = post;
           return (
@@ -60,7 +63,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt
