@@ -15,6 +15,9 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
+            fields {
+              slug
+            }
             frontmatter {
               title
             }
@@ -32,7 +35,7 @@ exports.createPages = ({ actions, graphql }) => {
     posts.forEach((post, index) => {
       
       createPage({
-        path: 'blog/' + kebabCase(post.node.frontmatter.title),
+        path: post.node.fields.slug,
         component: blogTemplate,
         context: {
           title: post.node.frontmatter.title
@@ -48,12 +51,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
-    console.log(value);
+    const value = kebabCase(node.frontmatter.title);
     createNodeField({
       name: `slug`,
       node,
-      value: `/blog${value}`
+      value: `/blog/${value}`
     });
   }
 };

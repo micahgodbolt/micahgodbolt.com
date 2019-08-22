@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-const kebabCase = string => string.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g).map(x => x.toLowerCase()).join('-');
 interface IIndexProps {
   data: {
     site: {
@@ -12,6 +11,9 @@ interface IIndexProps {
       edges: {
         node: {
           excerpt: string;
+          fields: {
+            slug: string;
+          }
           frontmatter: {
             date: string;
             title: string;
@@ -33,6 +35,7 @@ export default (props: IIndexProps) => {
         {posts.map((post, i) => {
           const {
             node: {
+              fields: {slug},
               frontmatter: { title, date },
               excerpt,
             }
@@ -40,7 +43,7 @@ export default (props: IIndexProps) => {
           return (
             <li key={i}>
               <h3>
-                <Link to={'blog/' + kebabCase(title)}>{title}</Link>
+                <Link to={slug}>{title}</Link>
               </h3>
               <small>{date}</small>
               <p> {excerpt} </p>
@@ -63,6 +66,9 @@ export const pageQuery = graphql`
       edges {
         node {
           excerpt
+          fields {
+            slug
+          }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
