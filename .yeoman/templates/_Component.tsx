@@ -1,6 +1,6 @@
 import React from "react";
 
-interface I<%= name %>Props extends React.HTMLAttributes<HTMLElement> {
+export interface I<%= name %>Props extends React.HTMLAttributes<HTMLElement> {
 
 }
 

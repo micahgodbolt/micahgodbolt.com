@@ -1,5 +1,8 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
+import {BlogTeaser} from "../components/BlogTeaser";
+import {Nav} from "../components/Nav";
+import { Helmet } from "react-helmet";
 interface IIndexProps {
   data: {
     site: {
@@ -29,8 +32,8 @@ export default (props: IIndexProps) => {
   const posts = data.allMarkdownRemark.edges;
   return (
     <div>
-      <h1>Welcome to {data.site.siteMetadata.title}</h1>
-      <ul><li><Link to={'/'}>Home</Link></li><li><Link to={'about'}>About</Link></li></ul>
+      
+      <Nav title={data.site.siteMetadata.title} />
       <ul>
         {posts.map((post, i) => {
           const {
@@ -40,13 +43,10 @@ export default (props: IIndexProps) => {
               excerpt,
             }
           } = post;
+
           return (
             <li key={i}>
-              <h3>
-                <Link to={slug}>{title}</Link>
-              </h3>
-              <small>{date}</small>
-              <p> {excerpt} </p>
+              <BlogTeaser  {...{slug, title, date, excerpt}} />
             </li>
           );
         })}
