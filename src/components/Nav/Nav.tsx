@@ -26,6 +26,9 @@ export const Nav = (props: INavProps) => {
         <li>
           <Link to={"about"}>About</Link>
         </li>
+        <li>
+          <a href={"http://fea.pub/"}>Book</a>
+        </li>
       </ul>
     </header>
   );
