@@ -1,4 +1,5 @@
 import React from 'react';
+import './BlogPost.scss';
 
 export interface IBlogPostProps {
   title: string;
@@ -9,7 +10,7 @@ export interface IBlogPostProps {
 export const BlogPost = (props: IBlogPostProps) => {
   const { title, date, html } = props;
   return (
-    <article>
+    <article className="BlogPost">
       <h1 className="post-title">{title}</h1>
       <span>{date}</span>
       <div dangerouslySetInnerHTML={{ __html: html }} />

@@ -31,7 +31,7 @@ export default (props: IIndexProps) => {
   const posts = data.allMarkdownRemark.edges;
   return (
     <Page>
-      <ul>
+      <ul style={{ padding: 0, listStyle: 'none' }}>
         {posts.map((post, i) => {
           const {
             node: {
