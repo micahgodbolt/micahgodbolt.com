@@ -1,8 +1,7 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
-import {BlogTeaser} from "../components/BlogTeaser";
-import {Nav} from "../components/Nav";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import { BlogTeaser } from '../components/BlogTeaser';
+import { Page } from '../components/Page';
 interface IIndexProps {
   data: {
     site: {
@@ -16,7 +15,7 @@ interface IIndexProps {
           excerpt: string;
           fields: {
             slug: string;
-          }
+          };
           frontmatter: {
             date: string;
             title: string;
@@ -31,27 +30,25 @@ export default (props: IIndexProps) => {
   const { data } = props;
   const posts = data.allMarkdownRemark.edges;
   return (
-    <div>
-      
-      <Nav title={data.site.siteMetadata.title} />
+    <Page>
       <ul>
         {posts.map((post, i) => {
           const {
             node: {
-              fields: {slug},
+              fields: { slug },
               frontmatter: { title, date },
-              excerpt,
+              excerpt
             }
           } = post;
 
           return (
             <li key={i}>
-              <BlogTeaser  {...{slug, title, date, excerpt}} />
+              <BlogTeaser {...{ slug, title, date, excerpt }} />
             </li>
           );
         })}
       </ul>
-    </div>
+    </Page>
   );
 };
 

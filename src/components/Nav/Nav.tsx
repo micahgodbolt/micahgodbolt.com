@@ -1,10 +1,9 @@
-import React from "react";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import React from 'react';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 
 interface INavProps extends React.HTMLAttributes<HTMLElement> {}
 
 export const Nav = (props: INavProps) => {
-
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       site {
@@ -13,23 +12,28 @@ export const Nav = (props: INavProps) => {
         }
       }
     }
-  `)
+  `);
 
-  const {...rest} = props;
+  const { ...rest } = props;
   return (
     <header {...rest}>
-      <h1>{data.site.siteMetadata.title}</h1>
-      <ul>
-        <li>
-          <Link to={"/"}>Home</Link>
-        </li>
-        <li>
-          <Link to={"about"}>About</Link>
-        </li>
-        <li>
-          <a href={"http://fea.pub/"}>Book</a>
-        </li>
-      </ul>
+      <h1>
+        <Link className="title" to="/">
+          {data.site.siteMetadata.title}
+        </Link>
+      </h1>
+      <nav>
+        <ul>
+          <li>
+            <Link to={'about'}>About</Link>
+          </li>
+          <li>
+            <a target="_blank" href={'http://fea.pub/'}>
+              Book
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };

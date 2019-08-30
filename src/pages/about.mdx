@@ -1,14 +1,12 @@
-import {WorkItems} from '../components/WorkItems';
-import { Nav } from '../components/Nav';
+import { WorkItems } from '../components/WorkItems';
+import { Page } from '../components/Page';
 
-
+<Page>
 <Nav />
 
 ## About Micah Godbolt
 
-
 Micah Godbolt is a Design System Advocate, author, speaker, trainer, blogger and developer from the Portland area. He has built design systems for companies like Red Hat and Microsoft, and is passionate about seeing design systems empower designers, developers and managers to take ownership in their sites and applications.
-
 
 ### Contact Me
 
@@ -17,9 +15,10 @@ Micah Godbolt is a Design System Advocate, author, speaker, trainer, blogger and
 
 #### Speaking
 
-<WorkItems {...props}/>
+<WorkItems {...props} />
 
 #### Training
+
 - CSS Dev Conf 2017 - Design Systems Workshop
 - Generate Conf London 2016 - Frontend Architecture for Design Systems
 - CSS Dev Conf 2015 - Visual Regression Testing Workshop
@@ -42,10 +41,6 @@ Micah Godbolt is a Design System Advocate, author, speaker, trainer, blogger and
   - [Part 3 - Calling Variables with Variables](https://www.phase2technology.com/blog/exploring-maps-in-sass-3-3part-3-calling-variables-with-variables/)
   - [Part 4 - Improving the map-get function](https://www.phase2technology.com/blog/exploring-maps-in-sass-3-3part-4-improving-the-map-get-function/)
 
-
-
-
-
 export const pageQuery = graphql`
   query {
     allAirtable(sort: { fields: data___Date }) {
@@ -61,3 +56,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+</Page>
