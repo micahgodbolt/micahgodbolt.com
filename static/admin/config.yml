@@ -17,3 +17,12 @@ collections:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
+  - name: pages
+    label: Pages
+    folder: src/pages
+    create: true
+    extension: 'mdx'
+    format: 'frontmatter'
+    fields:
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }

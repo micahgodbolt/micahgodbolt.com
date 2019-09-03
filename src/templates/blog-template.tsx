@@ -14,12 +14,10 @@ export default function Template({ data }) {
     title: frontmatter.title
   };
 
-  console.log(data);
-
   return (
     <Page>
       <Hood title={frontmatter.title} description={excerpt} />
-      <BlogPost {...BlogPostProps}>hello </BlogPost>
+      <BlogPost {...BlogPostProps} />
     </Page>
   );
 }
