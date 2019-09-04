@@ -9,7 +9,6 @@ export interface IBlogPostProps {
 
 export const BlogPost = (props: IBlogPostProps) => {
   const { title, date, body } = props;
-  console.log(body);
   return (
     <article className="BlogPost">
       <h1 className="post-title">{title}</h1>
