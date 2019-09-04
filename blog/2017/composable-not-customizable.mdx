@@ -8,18 +8,17 @@ One of the challenges of developing for an open source design system like [Fabri
 
 It turns out, this approach is neither maintainable, nor sustainable. We quickly found oursleves duplicating styles and functionality as each component gets more complex and capable. We'd even gotten to the point where we were needing to add color abstractions so that we can keep all of these duplicated UI elements in sync.
 
-A better approach to this problem is to stop trying to make components so customizable, __and start making them composable__.
+A better approach to this problem is to stop trying to make components so customizable, **and start making them composable**.
 
 A composable solution to the dropdown problem above would be to allow developers to compose content into each list item. This means users could override the function that creates the dropdown content, and pass in any other component or custom markup they wished.
 
 ## Real life example
 
-Recently I was working on a component called [Facepile](https://dev.office.com/fabric#/components/facepile) which is a list of [Persona](https://dev.office.com/fabric#/components/persona) components. Personas can contain either an image or the person's initials, if no image is available. This worked great until we wanted to add "Personas like buttons" to our Facepile that contained Icons, or custom text. 
+Recently I was working on a component called [Facepile](https://dev.office.com/fabric#/components/facepile) which is a list of [Persona](https://dev.office.com/fabric#/components/persona) components. Personas can contain either an image or the person's initials, if no image is available. This worked great until we wanted to add "Personas like buttons" to our Facepile that contained Icons, or custom text.
 
+<img style="display: block; max-width: 100%;" src="/assets/img/facepile_icon.png" />
 
-<img style="display: block; max-width: 100%;" src="/assets/img/facepile_icon.png">
-
-One option would be to go into the persona and create an Icon property that'd let us pass in an icon name, as well as another string property for passing in custom text. Then we'd need to write a bunch of logic to only print the correct markup given the data pass in, and then write tests to support each variation. 
+One option would be to go into the persona and create an Icon property that'd let us pass in an icon name, as well as another string property for passing in custom text. Then we'd need to write a bunch of logic to only print the correct markup given the data pass in, and then write tests to support each variation.
 
 The other option would be to make the contents of that Persona customizable so that a user could override a single instance of a Persona and pass in any component that they like. This meant that we could pass in an icon, or string of text, or superset text, or literally any other component, all without having to modify the Persona again.
 
@@ -43,7 +42,7 @@ Composability also encourages smaller reusable pieces of content. If you decided
 
 ## Further Reading
 
-Once you have a system of containers and components that you can compose together, you'll find that you start to make many of your new components without ever introducing new markup or styles. By abstracting into components everything your visual language is ["needs to say"](https://twitter.com/micahgodbolt/status/717565115919237120), you can start to build an infinate number of "patterns" that are nothing more than custom interfaces into more complex designs. 
+Once you have a system of containers and components that you can compose together, you'll find that you start to make many of your new components without ever introducing new markup or styles. By abstracting into components everything your visual language is ["needs to say"](https://twitter.com/micahgodbolt/status/717565115919237120), you can start to build an infinate number of "patterns" that are nothing more than custom interfaces into more complex designs.
 
 I wrote about this style of composition in a previous post called ["A New Design System Architecture"](/blog/a-new-design-system-architecture).
 

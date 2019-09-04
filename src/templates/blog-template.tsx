@@ -5,13 +5,13 @@ import { Page } from '../components/Page';
 import { Hood } from '../components/Hood';
 
 export default function Template({ data }) {
-  const { markdownRemark } = data;
-  const { frontmatter, html, excerpt } = markdownRemark;
+  const { mdx } = data;
+  const { frontmatter, body, excerpt } = mdx;
 
   const BlogPostProps: IBlogPostProps = {
     date: frontmatter.date,
-    html: html,
-    title: frontmatter.title
+    title: frontmatter.title,
+    body: body
   };
 
   return (
@@ -24,9 +24,9 @@ export default function Template({ data }) {
 
 export const pageQuery = graphql`
   query BlogPostByPath($title: String!) {
-    markdownRemark(frontmatter: { title: { eq: $title } }) {
+    mdx(frontmatter: { title: { eq: $title } }) {
       excerpt
-      html
+      body
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title

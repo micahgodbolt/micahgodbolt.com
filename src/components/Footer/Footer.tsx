@@ -14,9 +14,9 @@ export const Footer = (props: IFooterProps) => {
           <li>
             <a href="http://www.github.com/micahgodbolt/micahgodbolt.com">Github</a>
           </li>
-          <li>
+          {/* <li>
             <a href="https://library.micahgodbolt.com">Pattern Library</a>
-          </li>
+          </li> */}
           <li>
             <a href="/rss.xml">RSS</a>
           </li>

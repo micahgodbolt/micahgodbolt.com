@@ -41,7 +41,7 @@ If we presented the user with our template's data model, they would need to trav
 
 And the resulting admin form would look like this:
 
-<img style="height: auto; max-width:100%;"  src="/assets/img/nesting.png" alt="Bad nested data">
+<img style="height: auto; max-width:100%;" src="/assets/img/nesting.png" alt="Bad nested data" />
 
 Not only did this create a large nested admin form, but it also meant that our title was stuck being rendered by the `band_header.twig` inside of the body of `group.twig`, inside of the header of `band.twig` for the life of this website. We couldn't move the title into a different template without migrating ALL of the content in our CMS.
 
@@ -126,6 +126,7 @@ Each Drupal content type is rendered by a template, based on a simple naming con
   {% endblock %}
 {% endembed %}
 ```
+
 > Once again an embed is used to render the card molecule template. Into that template is passed a data object containing a class, url, title and other variables. The embed also has two `block` zones, `card_image_top` and `card_links`. This allowed them to drop the images and links into a specific part of the template file.
 
 ### Translation, Allocation, Embellishment
@@ -136,7 +137,7 @@ Through the power of a modern templating language, they could not only **transla
 
 ## 30 Minutes Before a Drupalcon Talk
 
-A few weeks ago, as I was preparing to give a [talk on Design Systems](http://bit.ly/road-runner-rules) at Drupalcon New Orleans, I sat down in the speaker lounge with [John Albin](https://twitter.com/johnalbin) hoping to tell him about the work I'd been doing at Red Hat. Being less than an hour before *his* talk, the conversation rightfully pivoted to his work and some of the troubling epiphanies he'd had recently.
+A few weeks ago, as I was preparing to give a [talk on Design Systems](http://bit.ly/road-runner-rules) at Drupalcon New Orleans, I sat down in the speaker lounge with [John Albin](https://twitter.com/johnalbin) hoping to tell him about the work I'd been doing at Red Hat. Being less than an hour before _his_ talk, the conversation rightfully pivoted to his work and some of the troubling epiphanies he'd had recently.
 
 You see, he's the author of the Drupal [Zen theme](https://www.drupal.org/project/zen), and with the Twig-powered release of Drupal 8 in recent months, he'd been spending a good deal of time working on a new version of this extremely popular theme. He went on to tell about what he thought was a **crazy** approach to writing his `.html.twig` files. Usually, he said, these files would be filled with the HTML used to render that particular piece of content. Instead, he found himself not writing any markup in them at all, prefering to fill them with embeds and includes like the following:
 
@@ -159,21 +160,3 @@ It turned out, we were all building our design systems using the exact same appr
 > **Translation, allocation, embellishment**: these are the tools of a Presenter.
 
 This changed everything for me, while at the same time made everything completely clear. Now we could move forward building complex design systems knowing exactly how these systems would interface with our applications. This is the future of design systems, the future of component APIs, and I'm confident to say, is the future of how we build websites.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -9,7 +9,7 @@ interface IIndexProps {
         title: string;
       };
     };
-    allMarkdownRemark: {
+    allMdx: {
       edges: {
         node: {
           excerpt: string;
@@ -28,7 +28,7 @@ interface IIndexProps {
 
 export default (props: IIndexProps) => {
   const { data } = props;
-  const posts = data.allMarkdownRemark.edges;
+  const posts = data.allMdx.edges;
   return (
     <Page>
       <ul style={{ padding: 0, listStyle: 'none' }}>
@@ -59,7 +59,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }, filter: { fields: { name: { eq: "blog" } } }) {
       edges {
         node {
           excerpt

@@ -1,19 +1,20 @@
 import React from 'react';
 import './BlogPost.scss';
-
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 export interface IBlogPostProps {
   title: string;
   date: string;
-  html: string;
+  body: string;
 }
 
 export const BlogPost = (props: IBlogPostProps) => {
-  const { title, date, html } = props;
+  const { title, date, body } = props;
+  console.log(body);
   return (
     <article className="BlogPost">
       <h1 className="post-title">{title}</h1>
       <span>{date}</span>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <MDXRenderer>{body}</MDXRenderer>
     </article>
   );
 };

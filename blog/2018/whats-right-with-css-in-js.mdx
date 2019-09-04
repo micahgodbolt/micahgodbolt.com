@@ -9,7 +9,6 @@ The first time I heard about CSS in JS I thought it was interesting but absurd. 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">How &#39;bout that CSS-in-JS? <a href="https://t.co/mcR9scUhQq">pic.twitter.com/mcR9scUhQq</a></p>&mdash; Brad Frost (@brad_frost) <a href="https://twitter.com/brad_frost/status/993920969990397952?ref_src=twsrc%5Etfw">May 8, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
 ## Obligatory Rebuttals
 
 Brad highlighted three different frustrations with css-in-js, so before I dive into how Fabric tackles this subject, let me drop in a few rebuttals.
@@ -20,7 +19,7 @@ Brad is concerned that css-in-js will produce styles with less portability, and 
 
 First, by writing styles in JavaScript, our components can actually be more portable. With Webpack, we at Fabric are able to package up our components into small bundles that can be imported directly into our applications, regardless of the tech stack of the application. Building on Drupal and want to render a small React powered widget? No need to change your CSS pipeline to include new assets, all of the CSS is loaded onto the page as soon as the widget is rendered.
 
-Secondly, I agree that writing our styles in JavaScript makes them less accessible to other components wanting to reuse variables, mixins and functions. The variable problem can certainly be remedied by moving those important values into Tokens (or some JSON'esque file that JS and Sass can read). Mixins and Functions, on the other hand, are more difficult to produce cross platform and will either need to be duplicated, or accepted as a 'lost in translation' casualty. 
+Secondly, I agree that writing our styles in JavaScript makes them less accessible to other components wanting to reuse variables, mixins and functions. The variable problem can certainly be remedied by moving those important values into Tokens (or some JSON'esque file that JS and Sass can read). Mixins and Functions, on the other hand, are more difficult to produce cross platform and will either need to be duplicated, or accepted as a 'lost in translation' casualty.
 
 ```js
 {
@@ -45,8 +44,8 @@ import { loadTheme } from 'office-ui-fabric-react/lib/Styling';
 
 loadTheme({
   palette: {
-    'themePrimary': 'red',
-    'themeDarkAlt': 'green'
+    themePrimary: 'red',
+    themeDarkAlt: 'green'
   }
 });
 ```
@@ -61,17 +60,16 @@ Regardless of your opinion of inline styles, css-in-js doesn't mean our concerns
 
 ```js
 root: [
-    'ms-SearchBox', // Classname passed to the root element
-    fonts.medium, // Font Family Mixin we imported above
-    normalize, // Normalize Mixin
-    {
-        color: palette.neutralPrimary, // Color variable from global palette
-        display: 'flex', // normal old css
-        flexDirection: 'row',
-        flexWrap: 'nowrap',
-    }
+  'ms-SearchBox', // Classname passed to the root element
+  fonts.medium, // Font Family Mixin we imported above
+  normalize, // Normalize Mixin
+  {
+    color: palette.neutralPrimary, // Color variable from global palette
+    display: 'flex', // normal old css
+    flexDirection: 'row',
+    flexWrap: 'nowrap'
+  }
 ];
-
 ```
 
 ### Best Practices
@@ -84,34 +82,36 @@ With [Microsoft Fabric UI](https://developer.microsoft.com/en-us/fabric) we face
 
 ### Provide the components as is and expect them to override with CSS
 
-If you've ever maintained a framework where people would customize it with CSS, you know how painful this can be. You never know what you'll break by doing something as simple as adding/removing a wrapper div, or rearranging a couple elements. As soon as your users feel they can't trust your components  you'll start losing them.
+If you've ever maintained a framework where people would customize it with CSS, you know how painful this can be. You never know what you'll break by doing something as simple as adding/removing a wrapper div, or rearranging a couple elements. As soon as your users feel they can't trust your components you'll start losing them.
 
 Cancel button is red as expected:
 
 ```html
 <style>
-.card button:last-child { background: red }
+  .card button:last-child {
+    background: red;
+  }
 </style>
 
 <div class="card">
-    <button> Click Me </button>
-    <button> Cancel </button>
+  <button>Click Me</button>
+  <button>Cancel</button>
 </div>
-
 ```
 
 Both buttons red after change in markup:
 
 ```html
 <style>
-.card button:last-child { background: red }
+  .card button:last-child {
+    background: red;
+  }
 </style>
 
 <div class="card">
-    <div><button> Click Me </button></div>
-    <div><button> Cancel </button></div>
+  <div><button>Click Me</button></div>
+  <div><button>Cancel</button></div>
 </div>
-
 ```
 
 ### Provide Sass variables that can be changed at compile time
@@ -124,7 +124,7 @@ $body-bg: #000;
 $body-color: #111;
 
 // Bootstrap and its default variables
-@import "node_modules/bootstrap/scss/bootstrap";
+@import 'node_modules/bootstrap/scss/bootstrap';
 ```
 
 First, you assume they even have a build step that would let them compile Sass. Fabric is often used by including it as a JavaScript dependency. You can use Fabric components directly in [CodePen](https://codepen.io/FabricReact/pen/NvBvWx) by linking directly to the [unpkg file](https://unpkg.com/office-ui-fabric-react/dist/office-ui-fabric-react.min.js).
@@ -139,7 +139,7 @@ If we treat component styles [as just another prop](https://reactjs.org/docs/com
 
 This not only makes the Button easier to use by our downstream partners, but it also makes it easier to use within our own framework. We can use the Button's functionality in our Dropdown without adding yet another variant to the Button.scss file.
 
-Another benefit of using a styling prop is that you can use [TypeScript](https://www.typescriptlang.org/) to define the interface. This means instead of hunting through the DOM to find the class name needed to target the SearchBox icon, you can [look at the interface](https://github.com/OfficeDev/office-ui-fabric-react/blob/b49d901ca069090a33777a6e03899673333aacf4/packages/office-ui-fabric-react/src/components/SearchBox/SearchBox.types.ts#L124). Ah, it's `icon`. 
+Another benefit of using a styling prop is that you can use [TypeScript](https://www.typescriptlang.org/) to define the interface. This means instead of hunting through the DOM to find the class name needed to target the SearchBox icon, you can [look at the interface](https://github.com/OfficeDev/office-ui-fabric-react/blob/b49d901ca069090a33777a6e03899673333aacf4/packages/office-ui-fabric-react/src/components/SearchBox/SearchBox.types.ts#L124). Ah, it's `icon`.
 
 ```TypeScript
 export interface ISearchBoxStyles {
@@ -164,11 +164,11 @@ If we think of our styles as the result of a function, we can include a set of s
 So if we know the SearchBox has a `hasInput` style param, we can return different styles depending on that value.
 
 ```js
-const styles = (hasInput) => {
-    icon: {
-        background: hasInput ? 'green' : 'transparent'
-    }
-}
+const styles = hasInput => {
+  icon: {
+    background: hasInput ? 'green' : 'transparent';
+  }
+};
 ```
 
 ## Why this all matters

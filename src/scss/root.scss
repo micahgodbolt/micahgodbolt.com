@@ -72,19 +72,3 @@ nav ul {
   list-style: none;
   padding: 0;
 }
-
-pre {
-  padding: 1em;
-}
-p > code,
-ul code {
-  padding: 0.1em 0.3em;
-}
-pre,
-p > code,
-ul code {
-  color: $color-page;
-  background: $color-primary-light;
-  overflow-x: scroll;
-  font-size: 0.7em;
-}
