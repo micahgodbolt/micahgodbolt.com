@@ -4,14 +4,15 @@ import { Footer } from '../Footer';
 import '../../scss/root.scss';
 import { MDXProvider } from '@mdx-js/react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
+import darkTheme from 'prism-react-renderer/themes/nightowl';
 
 export interface IPageProps extends React.HTMLAttributes<HTMLElement> {}
 
 const HighlightHOC = p => {
   return (
-    <Highlight {...defaultProps} code={p.children} language="jsx">
+    <Highlight {...defaultProps} theme={darkTheme} code={p.children} language="jsx">
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={style}>
+        <div className={className} style={style}>
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
@@ -19,7 +20,7 @@ const HighlightHOC = p => {
               ))}
             </div>
           ))}
-        </pre>
+        </div>
       )}
     </Highlight>
   );
@@ -27,9 +28,9 @@ const HighlightHOC = p => {
 
 const HighlightInlineHOC = p => {
   return (
-    <Highlight {...defaultProps} code={p.children} language="jsx">
+    <Highlight {...defaultProps} theme={darkTheme} code={p.children} language="jsx">
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <span className={className} style={style}>
+        <code className={className} style={style}>
           {tokens.map((line, i) => (
             <span {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
@@ -37,7 +38,7 @@ const HighlightInlineHOC = p => {
               ))}
             </span>
           ))}
-        </span>
+        </code>
       )}
     </Highlight>
   );
