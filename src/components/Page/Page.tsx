@@ -4,7 +4,7 @@ import { Footer } from '../Footer';
 import '../../scss/root.scss';
 import { MDXProvider } from '@mdx-js/react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import darkTheme from 'prism-react-renderer/themes/nightowl';
+import darkTheme from 'prism-react-renderer/themes/nightOwl';
 
 export interface IPageProps extends React.HTMLAttributes<HTMLElement> {}
 
