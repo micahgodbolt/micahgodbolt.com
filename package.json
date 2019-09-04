@@ -24,6 +24,7 @@
     "@types/react-helmet": "^5.0.9",
     "@types/storybook__react": "^4.0.2",
     "awesome-typescript-loader": "^5.2.1",
+    "dotenv": "^8.1.0",
     "esm": "^3.2.25",
     "gatsby": "^2.13.75",
     "gatsby-link": "^2.2.7",
