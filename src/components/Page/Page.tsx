@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav } from '../Nav';
 import { Footer } from '../Footer';
-import '../../scss/root.scss';
+import './page.scss';
 import { MDXProvider } from '@mdx-js/react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import darkTheme from 'prism-react-renderer/themes/nightOwl';
