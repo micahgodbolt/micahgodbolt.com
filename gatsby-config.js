@@ -83,13 +83,15 @@ module.exports = {
           {
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  data: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.body }]
-                });
+                if (edge.node.fields && edge.node.fields.slug) {
+                  return Object.assign({}, edge.node.frontmatter, {
+                    description: edge.node.excerpt,
+                    data: edge.node.frontmatter.date,
+                    url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                    guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                    custom_elements: [{ 'content:encoded': edge.node.body }]
+                  });
+                }
               });
             },
             query: `
@@ -104,6 +106,7 @@ module.exports = {
                         title
                         date
                       }
+                      excerpt
                       body
                     }
                   }
