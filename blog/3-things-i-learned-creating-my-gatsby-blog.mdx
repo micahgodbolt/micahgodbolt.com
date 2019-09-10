@@ -35,4 +35,88 @@ So yeah, you get a ton out of the box, but then you'll find yourself ripping thi
 
 In the end, I decided to go with "Start from scratch" and I'm quite thankful for it. I learned a ton about Gatsby and GraphQl in the process, and have a better understanding of the entire lifecycle and flow of the framework.
 
-## Problem 2:
+## Problem 2: MD vs MDX
+
+If you came to this Gatsby party because you love React, then I don't think there is ANY reason that you shouldn't be checking out MDX. With MDX you can mix Markdown and React into the same file like this:
+
+```jsx
+import { myComponent } from '../components/myComponent';
+
+# Markdown Here
+
+<p> You can still do HTML in markdown </p>
+
+<myComponent props={{rocks: true}}>   
+  But you can also import and render JSX in the same file! 
+</myComponent>
+```
+
+MDX is the perfect React documentation format! No more writing MD files the combining them with code snippets in a JSX file. You don't even need to import React in MDX. It's just assumed!
+
+### The Real Problem
+
+As great as MDX is, there's something equally as great called [NetlifyCMS](https://www.netlifycms.org/). Yes, it's made by Netlify, but no, it has absolutely nothing to do with Netlify's product. It's a React application you can quickly install into Gatsby (or any other static site generator) that simplifies the authoring process of new and edited Markdown files. I'm actually using it right now!
+
+![](/assets/netlifycms.png)
+
+The secret sauce of NetlifyCMS is that it gives users a traditional `website.com/admin` URL they can access that lists all of their content and lets them create, edit, upload images, and publish without ever touching a terminal or code editor. The magic is that NetlifyCMS treats GitHub as your database. It uses GitHub for authentication, and once you're done writing, saving simply creates a PR that adds a markdown file (and any uploaded images). 
+
+This doesn't sound like a problem yet does it? See, the problem is that NetlifyCMS doesn't support MDX out of the box. When you search for NetlifyCMS and MDX you come across this [long standing feature request](https://github.com/netlify/netlify-cms/issues/1776) in their issue queue. 
+
+I thought I was sunk! I went as far as setting up my blog entries as Markdown, then using MDX for my site pages. While this approach worked, it felt dirty, and it made templating really confusing because sometimes the data was Markdown (yeah for dangerouslySetInnerHTML!) and sometimes it was MDX (OMG [MDXProvider](https://mdxjs.com/guides/live-code#passing-to-the-mdxprovider) is amazing). 
+
+Fortunately, after reaching out to the NetlifyCMS team, I was informed that I COULD use their tool to edit MDX files, though I wouldn't get any of the React components to render (which I could live with). Best part was that it took all of 2 lines of code to fix:
+
+```js
+    // config.yml
+    // inside my blog collection
+    extension: 'mdx'
+    format: 'frontmatter'
+```
+
+## Problem 3: Differentiating between blog posts and site pages
+
+Now that all of my pages were in MDX, I had a new problem. When I made a query for `allMdx`, I'd get blog pages, as well as my other static pages (like About). When you import files into Gatsby using `gatsby-source-filesystem` you get to name the collection:
+
+```js
+    // gatsby-config.js
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/blog`,
+        name: 'blog'
+      }
+    },
+```
+But when you grab files with the `allMdx` query, you don't actually have direct access to that `name` string because it is on the parent of the MDX file. So I found myself constantly doing this anytime I dealt with `allMdx`:
+
+```js
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const parent = getNode(node.parent);
+  if (parent.sourceInstanceName === 'blog') {
+    // do stuff
+  }
+}
+```
+
+To clean this up and ensure that I could always filter out non blog content I use `createNodeField` to set the name value directly on the Mdx node.
+
+```js
+exports.onCreateNode = ({ node, actions, getNode }) => {
+ // ...
+ createNodeField({
+        name: `name`,
+        node,
+        value: parent.sourceInstanceName
+      });
+}
+```
+Now I could filter out non blog content directly in my GraphQl query
+
+```js
+allMdx( filter: { fields: { name: { eq: "blog" } } } )
+```
+
+
+
+
