@@ -13,6 +13,8 @@ collections:
     label: Blog
     folder: blog
     create: true
+    extension: 'mdx'
+    format: 'frontmatter'
     fields:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
