@@ -1,0 +1,38 @@
+---
+date: 2019-09-10T04:33:48.914Z
+title: 3 Things I Learned Creating My Gatsby Blog
+---
+I've had my new blog up and running for a bit now, but had been having trouble pulling the trigger on writing something new. Seemed every topic that came to mind deserved several hours of work to properly craft. Sure, those blogs have their place, but I really just need to start writing.....something! So I did what anyone else would do....I asked twitter.
+
+One of the first responses I got was the following:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Blog about top 3 problems when setting up a <a href="https://twitter.com/Gatsby?ref_src=twsrc%5Etfw">@gatsby</a> site. And how you overcame them.</p>&mdash; Ken (@kenneth_chau) <a href="https://twitter.com/kenneth_chau/status/1171246251255271425?ref_src=twsrc%5Etfw">September 10, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+It might sound a bit like a clickbait title, but Ken was onto something! See, I'd had in mind to blog my entire [Gatsby](https://www.gatsbyjs.org/) site building experience, but as you might expect, that'd be a big project! I also kept pushing off starting an article like that because I don't quite feel 'done' setting this thing up. But that's the problem...I'll never be done!  So Ken's suggestion is just what I needed: Write about something important, but limit it to a few bite size chunks. 
+
+So...Here goes!
+
+## Problem 1:  To start from scratch vs start with a template
+
+Out of the box, Gatsy makes it really easy to build individual pages, but once you step into blogging it gets a bit more complex. Markdown vs MDX, digging into GraphQL, templates, `gatsby-node.js`, `createPage`, `onCreateNode`. If your first Gatsby site is a blog, you are going to be diving head long into some complex topics.
+
+### Solution 1: Starter project
+
+Starting off with a starter project offers a ton of value. Take the [Gatsby Starter Blog](https://github.com/gatsbyjs/gatsby-starter-blog) for example. This project will get you off the ground running in a heartbeat. It gives you a working blog with good SEO, out of the box styling, RSS feed, and a solid opinionated setup. 
+
+On the other hand, it uses Markdown instead of [MDX](https://mdxjs.com/), is missing TypeScript support, uses some opinionated Typography styling system pulled in from the Wordpress 2016 template.
+
+So yeah, you get a ton out of the box, but then you'll find yourself ripping things out, adding things in, and constantly wondering if it would have been easier to start from scratch.
+
+### Solution 2: Start from scratch
+
+[Gatsby documentation](https://www.gatsbyjs.org/docs/) is pretty amazing. The more I use the product, the more I look forward to digging into to their docs to find solutions. This was also the case when starting from scratch. 
+
+1. The [quick start](https://www.gatsbyjs.org/docs/quick-start/) got me up and running....quickly.
+2. [Programmatically creating pages ](https://www.gatsbyjs.org/tutorial/part-seven/)was pretty straight forward following their instructions
+3. [Working in GraphQl](https://www.gatsbyjs.org/tutorial/part-four/) is well spelled out in the docs, and [GraphiQl](https://www.gatsbyjs.org/docs/graphql-reference/#basic-query) is a game changer!
+4. If I was having trouble with a concept, or wonder what I was missing, I could always take a look at the Gatsby Starter Blog
+
+In the end, I decided to go with "Start from scratch" and I'm quite thankful for it. I learned a ton about Gatsby and GraphQl in the process, and have a better understanding of the entire lifecycle and flow of the framework.
+
+## Problem 2:
