@@ -12,7 +12,7 @@ export const BlogPost = (props: IBlogPostProps) => {
   return (
     <article className="BlogPost">
       <h1 className="post-title">{title}</h1>
-      <span>{date}</span>
+      <p className="post-date">{date}</p>
       <MDXRenderer>{body}</MDXRenderer>
     </article>
   );
