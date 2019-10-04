@@ -2,7 +2,6 @@
 date: 2019-09-10T04:33:48.914Z
 title: 3 Things I Learned Creating My Gatsby Blog
 ---
-
 I've had my new blog up and running for a bit now, but have been having trouble pulling the trigger on writing something new. Seemed every topic that came to mind deserved several hours of work to properly craft. Sure, those blogs have their time and place, but I really just need to start writing.....something! So I did what anyone else would do: I asked twitter.
 
 One of the first responses I got was the following:
@@ -21,7 +20,8 @@ Out of the box, Gatsy makes it really easy to build a basic site, but once you s
 
 Starting off with a starter project offers a ton of value. Take the [Gatsby Starter Blog](https://github.com/gatsbyjs/gatsby-starter-blog) for example. This project will get you off the ground running in a heartbeat. It gives you a working blog with good SEO, out of the box styling, RSS feed, and a solid opinionated setup.
 
-On the other hand, it uses Markdown instead of [MDX](https://mdxjs.com/), is missing TypeScript support, and uses some opinionated styling pulled in from the Wordpress 2016 template. Weird.
+On the other hand, it uses Markdown instead of [MDX](https://mdxjs.com/), is missing TypeScript support, and uses some opinionated styling pulled in from the Wordpress 2016 template.
+ Weird.
 
 So yeah, you get a ton out of the box, but then you'll find yourself ripping things out, adding things in, and constantly wondering if it would have been easier to start from scratch.
 
@@ -32,7 +32,8 @@ So yeah, you get a ton out of the box, but then you'll find yourself ripping thi
 1. The [quick start](https://www.gatsbyjs.org/docs/quick-start/) got me up and running....quickly.
 2. [Programmatically creating pages](https://www.gatsbyjs.org/tutorial/part-seven/) was pretty straight forward following their instructions
 3. [Working in GraphQL](https://www.gatsbyjs.org/tutorial/part-four/) is well spelled out in the docs, and [GraphiQl](https://www.gatsbyjs.org/docs/GraphQL-reference/#basic-query) is a game changer!
-4. If I was having trouble with a concept, or wonder what I was missing, I could always take a look at the Gatsby Starter Blog (and I often did)
+4. If I was having trouble with a concept, or wonder what I was missing, I could always take a look at the Gatsby Starter Blog
+   (and I often did)
 
 In the end, I decided to go with "Start from scratch" and I'm quite thankful for it. I learned a ton about Gatsby and GraphQL in the process, and have a better understanding of the entire lifecycle and flow of the framework.
 
@@ -62,7 +63,8 @@ As great as MDX is, there's something equally as great called [NetlifyCMS](https
 
 ![](/assets/netlifycms.png)
 
-The secret sauce of NetlifyCMS is that it gives users a traditional `website.com/admin` URL they can access that lists all of their content and lets them create, edit, upload images, and publish without ever touching a terminal or code editor. Under the hood, NetlifyCMS treats GitHub as your database. It uses GitHub for authentication, and once you're done, saving simply creates a PR that adds a markdown file (and any uploaded images) to your GitHub repo. Check out [Issue 17](https://github.com/micahgodbolt/micahgodbolt.com/pull/17) here.
+The secret sauce of NetlifyCMS is that it gives users a traditional `website.com/admin` URL they can access that lists all of their content and lets them create, edit, upload images, and publish without ever touching a terminal or code editor. Under the hood, NetlifyCMS treats GitHub as your database. It uses GitHub for authentication, and once you're done, saving simply creates a PR that adds a markdown file (and any uploaded images) to your GitHub repo.
+ Check out [Issue 17](https://github.com/micahgodbolt/micahgodbolt.com/pull/17) here.
 
 This doesn't sound like a problem yet does it? No, the problem is that NetlifyCMS doesn't support MDX out of the box. When you search for NetlifyCMS and MDX you come across this [long standing feature request](https://github.com/netlify/netlify-cms/issues/1776) in their issue queue.
 
@@ -73,8 +75,8 @@ Fortunately, after reaching out to the NetlifyCMS team, I was informed that I CO
 ```js
 // config.yml
 // inside my blog collection
-extension: "mdx";
-format: "frontmatter";
+extension: 'mdx'
+format: 'frontmatter'
 ```
 
 ## Problem 3: Differentiating between blog posts and site pages
