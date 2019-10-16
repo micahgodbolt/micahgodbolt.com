@@ -39,7 +39,7 @@ Then the consumer can use `onDismiss` to do all sorts of things, like prevent th
 <Dropdown
   onDismiss={(event) => {
     if (event.shiftKey === true) {
-      event.preventDefault
+      event.preventDefault();
     }
   }  
   {...otherProps}
