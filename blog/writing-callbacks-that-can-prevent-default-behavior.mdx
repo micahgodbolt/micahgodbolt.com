@@ -1,8 +1,8 @@
 ---
 date: 2019-10-16T17:57:42.067Z
-title: Writing callbacks that can prevent default behavior
+title: Writing callbacks that prevent default behavior
 ---
-A common pattern I see in writing components is the idea of a callback: a user provided function that gets called at a particular point of a component's lifecycle. 
+A common pattern in writing components are callback props: a user provided function that gets called at a particular point of a component's life cycle. 
 
 One question that often comes up though, is what to do about the default behavior. If the Dropdown is dismissed when you click on an item, or click on the page how should the `onDismiss` callback affect that behavior?
 
