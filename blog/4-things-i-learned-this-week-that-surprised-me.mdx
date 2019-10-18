@@ -53,12 +53,14 @@ In the past, you've probably seen specificity written like this:
 #someID .myClass.myOtherClass a {
   color: green;
 }
-/* 1 - 2 - 1 */
+/* id - class - tag  */
+/* 1    2       1 */
 
 ul li div.linkClass span #anchorID {
   color: red;
 }
-/* 1 - 1 - 4  */
+/* id - class - tag  */
+/* 1    1       4  */
 ```
 
 If both selectors match the anchor tag, the color will be `green` because the first slot is the same (1) but the second slot is higher for `green`. In this case, the 3rd slot doesn't even matter.
@@ -68,13 +70,13 @@ So enter the !important declaration! So what exactly does that do? Lets look:
 ```css
 dl > dt.title { color: hotpink !important }
 /* ! - id - class - tag  */
-/* 1 - 0  - 1     - 2  */
+/* 1   0    1       2  */
 
 /* vs */
 
 dl > dt { color: rebeccapurple !important }
 /* ! - id - class - tag  */
-/* 1 - 0  - 1     - 1  */
+/* 1   0    1       1  */
 ```
 
 So just like above, we go left to right until we find a higher value.
