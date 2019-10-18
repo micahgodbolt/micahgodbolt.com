@@ -1,0 +1,60 @@
+---
+date: 2019-10-18T03:31:06.107Z
+title: 3 things I learned this week that surprised me
+---
+## Specificity and !important
+
+I like using [twitter polls](https://twitter.com/micahgodbolt/status/1131626097349496833) to test people's assumptions around odd edge case CSS knowledge, so when I saw this tweet:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/DailySpecificity?src=hash&amp;ref_src=twsrc%5Etfw">#DailySpecificity</a><br><br>html`<br> &lt;dl&gt;<br> &lt;dt class=&quot;title&quot;&gt;...&lt;/dt&gt;<br> &lt;dd class=&quot;definition&quot;&gt;...&lt;/dd&gt;<br> &lt;/dl&gt;<br>`<br><br>css`<br> dl &gt; dt.title {<br> color: hotpink !important;<br> }<br><br> dl &gt; dt {<br> color: rebeccapurple !important;<br> }<br>`<br><br>what color is the &lt;dt&gt;?</p>&mdash; Adam Argyle (@argyleink) <a href="https://twitter.com/argyleink/status/1182041480065536000?ref_src=twsrc%5Etfw">October 9, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+I decided to jump right on in!
+
+My first guess was `hotpink` due to higher specificity of the selector, but then I thought about the `!important` tag being a big trump card for specificity, and how our initial assumptions are often wrong. So I guessed that `!important` basically blew away all specificity, and without specificity, all that was left was the cascade. 
+
+So `rebeccapurple` it was! I outsmarted the poll!
+
+Except that I was wrong...
+
+The answer actually was `hotpink`.
+
+### Why?
+
+In the past, you've probably seen specificity written like this:
+
+```scss
+#someID .myClass.myOtherClass a { color: green } 
+/* 1 - 2 - 1 */
+
+ul li div.linkClass span #anchorID  { color : red } 
+/* 1 - 1 - 4  */
+```
+If both selectors match the anchor tag, the color will be `green` because the first slot is the same (1) but the second slot is higher for `green`. In this case, the 3rd slot doesn't even matter. 
+
+So enter the !important declaration! So what exactly does that do? Lets look:
+
+```
+dl > dt.title { color: hotpink !important }
+/* ! - id - class - tag  */
+/* 1 - 0  - 1     - 2  */
+
+/* vs */
+
+dl > dt { color: rebeccapurple !important }
+/* ! - id - class - tag  */
+/* 1 - 0  - 1     - 1  */
+```
+So just like above, we go left to right until we find a higher value. 
+
+- !important: same
+- id: same
+- class: same
+- tag: winner `hotpink`!
+
+## Conclusion
+
+It turns out there was a 4th value in CSS specificity all along.
+
+## Feeling productive at work
+
+
