@@ -6,7 +6,7 @@ title: 4 things I learned this week that surprised me
 
 I like using [twitter polls](https://twitter.com/micahgodbolt/status/1131626097349496833) to test people's assumptions around odd edge case CSS knowledge, so when I saw this tweet:
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/DailySpecificity?src=hash&amp;ref_src=twsrc%5Etfw">#DailySpecificity</a><br/><br/>html`<br/> &lt;dl&gt;<br/> &lt;dt class=&quot;title&quot;&gt;...&lt;/dt&gt;<br/> &lt;dd class=&quot;definition&quot;&gt;...&lt;/dd&gt;<br/> &lt;/dl&gt;<br/>`<br/><br/>css`<br/> dl &gt; dt.title {<br/> color: hotpink !important;<br/> }<br/><br/> dl &gt; dt {<br/> color: rebeccapurple !important;<br/> }<br/>`<br/><br/>what color is the &lt;dt&gt;?</p>&mdash; Adam Argyle (@argyleink) <a href="https://twitter.com/argyleink/status/1182041480065536000?ref_src=twsrc%5Etfw">October 9, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/DailySpecificity?src=hash&amp;ref_src=twsrc%5Etfw">#DailySpecificity</a><br/><br/>html\`<br/> &lt;dl&gt;<br/> &lt;dt class=&quot;title&quot;&gt;...&lt;/dt&gt;<br/> &lt;dd class=&quot;definition&quot;&gt;...&lt;/dd&gt;<br/> &lt;/dl&gt;<br/>\`<br/><br/>css\`<br/> dl &gt; dt.title {<br/> color: hotpink !important;<br/> }<br/><br/> dl &gt; dt {<br/> color: rebeccapurple !important;<br/> }<br/>\`<br/><br/>what color is the &lt;dt&gt;?</p>&mdash; Adam Argyle (@argyleink) <a href="https://twitter.com/argyleink/status/1182041480065536000?ref_src=twsrc%5Etfw">October 9, 2019</a></blockquote> 
 
 I decided to jump right on in!
 
@@ -29,6 +29,7 @@ In the past, you've probably seen specificity written like this:
 ul li div.linkClass span #anchorID  { color : red } 
 /* 1 - 1 - 4  */
 ```
+
 If both selectors match the anchor tag, the color will be `green` because the first slot is the same (1) but the second slot is higher for `green`. In this case, the 3rd slot doesn't even matter. 
 
 So enter the !important declaration! So what exactly does that do? Lets look:
@@ -44,12 +45,13 @@ dl > dt { color: rebeccapurple !important }
 /* ! - id - class - tag  */
 /* 1 - 0  - 1     - 1  */
 ```
+
 So just like above, we go left to right until we find a higher value. 
 
-- !important: `1 === 1` 
-- id: `0 === 0`
-- class: `1 === 1`
-- tag: `1 < 2` winner `hotpink`!
+* !important: `1 === 1` 
+* id: `0 === 0`
+* class: `1 === 1`
+* tag: `1 < 2` winner `hotpink`!
 
 ### Conclusion
 
@@ -64,9 +66,9 @@ One thing that keeps surprising me at Microsoft, but really shouldn't, is how of
 I believe this is happening more often because of this ever evolving landscape of tools and best practices. The JAM stack, and statically generated sites, is a relatively new set of tools for the enterprise market, but it is solving, at scale, a large number of issues that many of our teams are encountering:
 
 1. Ownership of content
-1. Flexibility of markup and presentation
-1. Leveraging open source technologies and ecosystems
-1. Building systems that are easy to hire for
+2. Flexibility of markup and presentation
+3. Leveraging open source technologies and ecosystems
+4. Building systems that are easy to hire for
 
 So when technologies like Gatsby and ContentfulCMS come along, it's no huge surprise that teams, who face these above challenges, start moving towards those solutions en masse. 
 
@@ -90,7 +92,6 @@ The result of this change was pretty drastic. I woke up ready to dive into work,
 
 There are many things that influence your energy level: Age, sleep, exercise, diet, but don't forget to look at the energy work leaves you with. Sometimes it can suck you dry, and other times it can actually give you a boost! So strive hard to find that work that excites you and keeps you going. It'll leave you with energy and passion to keep learning, and keep getting better, and open up doors to do even more things that you love.
 
-
 ## Working from home and why Friday is opposite day
 
 At work, we usually keep Fridays pretty free from meetings means that many of my office bound co-workers take the opportunity to work from home. This often leads to awkwardness during those occasional Friday meetings where a dev, working from their kitchen counter, has to apologize for their connection quality, lack of headphones, or the sound of barking dogs and construction. 
@@ -102,25 +103,3 @@ Me, on the other hand, see Fridays completely differently.
 My normal day is working from home. My connection is great, my headset/mic is top notch, the dog is either at doggy day care, or quietly sleeping in her crate. But sometimes I want to go to a coffee shop or co-work with friends in town...anything to get out of the house. I've realized recently that Friday is a great day to do that. No meetings, no worries about trying to take a call from a coffee shop or co-working space dealing with questionable network, audio, or dogs.
 
 So next time you're enjoying your meeting free day as a WFH day, I'll be making my  trek into the city to actually be working around other people. Since today is Thursday, I'll wish you all a happy Friday tomorrow...or as I call it: opposite day.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
