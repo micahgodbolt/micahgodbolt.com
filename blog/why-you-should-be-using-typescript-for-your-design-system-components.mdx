@@ -4,14 +4,11 @@ title: 'Why you should be using Typescript in your Design System '
 ---
 The web community loves [TypeScript](https://www.typescriptlang.org/) right now. After working in complex applications environments, its pretty easy to see the benefits that it brings: less bugs, easier on-boarding, self documentation, improved refactoring. But you don't need to be an application developer to love typed languages. If you are building a Design System you owe it to your customers to user TypeScript! Here are some of the key reasons you want to be using TypeScript in your Design System controls.
 
-
 ## Improved usability
 
 If you write you controls with typed interfaces, then it becomes much easier for consumers to use your controls without having to dig through piles of documentation. Here's a Card component that takes in a few simple props for its content, and renders one or more tags, which have their own props. 
 
-
 ```tsx
-
 // Tag.tsx
 import React from "react";
 
@@ -21,8 +18,8 @@ export interface TagProps {
    onClick: (event: React.MouseEvent<HTMLElement> ) => void;
 }
 
-export Tag = (props: TagProps ) => {
-  export (<div>...do stuff there...</div>)
+export const Tag = (props: TagProps ) => {
+  return (<div>...do stuff there...</div>)
 }
 
 // Card.tsx 
@@ -36,13 +33,18 @@ export interface CardProps {
   tags?: TagProps[]; 
 }
 
-export Card = (props: CardProps) => {
-  export (<div>...do stuff there...</div>)
+export const Card = (props: CardProps) => {
+  return (<div>...do stuff there...</div>)
 }
-
 ```
 
-Now that our Card has its props defined with TypeScript users will not only get much better intellisense (the editor telling you what props are available), but you'll also be warned if you are using the props incorrectly.
+Now that our Card has its props defined with TypeScript users will not only get much better intellisense (the editor telling you what props are available):
+
+![Code snippet showing intellisence on the Card component](/assets/card-interface.png)
+
+...but you'll also be warned if you are using the props incorrectly.
+
+### Error Examples
 
 This will throw an error because "title" is required (no `?` after the property name)
 
@@ -53,7 +55,7 @@ import {Card, TagProps} from "your-awesome-design-system";
 <Card description="Hi there" /> 
 ```
 
----
+- - -
 
 This will throw an error because Card expected a string for the title, not an array of strings.
 
@@ -61,7 +63,7 @@ This will throw an error because Card expected a string for the title, not an ar
 <Card title={['First paragraph', 'Second paragraph'} />
 ```
 
----
+- - -
 
 Types can be used to define data that will be passed into props. Here's the data for an array of Tags, which is exactly what the `tags` prop expects. 
 
@@ -82,7 +84,6 @@ Since component interfaces define the shape of the data passed into a control, t
 
 The way we do this on UI Fabric is with a utility called [API Extractor](https://api-extractor.com/). This is the same tool used by [Microsoft Docs](https://docs.microsoft.com/) and it lets us automatically turn this [Checkbox interface](https://github.com/OfficeDev/office-ui-fabric-react/blob/master/packages/office-ui-fabric-react/src/components/Checkbox/Checkbox.types.ts#L26) into [this documentation](https://developer.microsoft.com/en-us/fabric#/controls/web/checkbox#implementation). 
 
-
 ## Enforcing backwards compatibility
 
 Another advantage of using API extractor is that we can use it to ensure that we aren't breaking backwards compatibility. Our promise is that we never remove or significantly modify a component's interface. If we need to change a prop name, we add the new name, and deprecate the old one until a major release where we remove the deprecated one.
@@ -100,19 +101,3 @@ If the API has changed (new props added, or the interface tightened a bit) we ca
 No one wants to be handed a cool new control, then be told to go read all of the docs every time they need to remember if `<Button expanded=` takes a `boolean` or a `string`, or what the shape of `<Button menuProps=` is, because someone forgot to add `menuProps` to the doc site. They don't want to be forced to read your change log every release then comb through thousands of lines of code to make sure some API hasn't changed out from under them.
 
 TypeScript gives you super powers when writing your control library, but the true power of the language are the tools and promises that you can provide to your consumers. Even if you don't use TypeScript internally, provide types with your library! Once you've used a properly typed library, you'll never want to go back to hunting through source code to figure out how your controls are supposed to work.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
