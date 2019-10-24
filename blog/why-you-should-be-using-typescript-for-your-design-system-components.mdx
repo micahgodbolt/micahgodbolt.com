@@ -15,7 +15,7 @@ import React from "react";
 export interface TagProps {
    title: string;
    color?: string;
-   onClick: (event: React.MouseEvent<HTMLElement> ) => void;
+   onClick?: (event: React.MouseEvent<HTMLElement> ) => void;
 }
 
 export const Tag = (props: TagProps ) => {
@@ -46,6 +46,8 @@ Now that our Card has its props defined with TypeScript users will not only get 
 
 ### Error Examples
 
+#### Missing required props
+
 This will throw an error because "title" is required (no `?` after the property name)
 
 ```tsx
@@ -56,6 +58,7 @@ import {Card, TagProps} from "your-awesome-design-system";
 ```
 
 - - -
+#### Incorrect prop types
 
 This will throw an error because Card expected a string for the title, not an array of strings.
 
@@ -65,13 +68,15 @@ This will throw an error because Card expected a string for the title, not an ar
 
 - - -
 
+#### Using types to define variable content
+
 Types can be used to define data that will be passed into props. Here's the data for an array of Tags, which is exactly what the `tags` prop expects. 
 
 If I leave out a title, or try to pass a second param in onClick, I'll get an error.
 
 ```tsx
 const tags:TagProps[] = [
-  { title: 'Tag1'}
+  { title: 'Tag1'},
   { color: 'red', onClick: (event, item) => alert(item.title) }
 ]
  
