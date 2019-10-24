@@ -1,0 +1,118 @@
+---
+date: 2019-10-24T04:07:22.198Z
+title: 'Why you should be using Typescript in your Design System '
+---
+The web community loves [TypeScript](https://www.typescriptlang.org/) right now. After working in complex applications environments, its pretty easy to see the benefits that it brings: less bugs, easier on-boarding, self documentation, improved refactoring. But you don't need to be an application developer to love typed languages. If you are building a Design System you owe it to your customers to user TypeScript! Here are some of the key reasons you want to be using TypeScript in your Design System controls.
+
+
+## Improved usability
+
+If you write you controls with typed interfaces, then it becomes much easier for consumers to use your controls without having to dig through piles of documentation. Here's a Card component that takes in a few simple props for its content, and renders one or more tags, which have their own props. 
+
+
+```tsx
+
+// Tag.tsx
+import React from "react";
+
+export interface TagProps {
+   title: string;
+   color?: string;
+   onClick: (event: React.MouseEvent<HTMLElement> ) => void;
+}
+
+export Tag = (props: TagProps ) => {
+  export (<div>...do stuff there...</div>)
+}
+
+// Card.tsx 
+import React from "react";
+import {Tag, TagProps} from "./Tag.tsx";
+
+export interface CardProps {
+  title: string;
+  description?: string;
+  promoted?: boolean;
+  tags?: TagProps[]; 
+}
+
+export Card = (props: CardProps) => {
+  export (<div>...do stuff there...</div>)
+}
+
+```
+
+Now that our Card has its props defined with TypeScript users will not only get much better intellisense (the editor telling you what props are available), but you'll also be warned if you are using the props incorrectly.
+
+This will throw an error because "title" is required (no `?` after the property name)
+
+```tsx
+import React from "react";
+import {Card, TagProps} from "your-awesome-design-system";
+
+<Card description="Hi there" /> 
+```
+
+---
+
+This will throw an error because Card expected a string for the title, not an array of strings.
+
+```tsx
+<Card title={['First paragraph', 'Second paragraph'} />
+```
+
+---
+
+Types can be used to define data that will be passed into props. Here's the data for an array of Tags, which is exactly what the `tags` prop expects. 
+
+If I leave out a title, or try to pass a second param in onClick, I'll get an error.
+
+```tsx
+const tags:TagProps[] = [
+  { title: 'Tag1'}
+  { color: 'red', onClick: (event, item) => alert(item.title) }
+]
+ 
+<Card title="Hello World" tags={tags}  /> 
+```
+
+## Easier documentation
+
+Since component interfaces define the shape of the data passed into a control, they are a great source to derive documentation from. It's like [JSDoc](https://jsdoc.app/), but your docs are updated as soon as you make a change to your interface.
+
+The way we do this on UI Fabric is with a utility called [API Extractor](https://api-extractor.com/). This is the same tool used by [Microsoft Docs](https://docs.microsoft.com/) and it lets us automatically turn this [Checkbox interface](https://github.com/OfficeDev/office-ui-fabric-react/blob/master/packages/office-ui-fabric-react/src/components/Checkbox/Checkbox.types.ts#L26) into [this documentation](https://developer.microsoft.com/en-us/fabric#/controls/web/checkbox#implementation). 
+
+
+## Enforcing backwards compatibility
+
+Another advantage of using API extractor is that we can use it to ensure that we aren't breaking backwards compatibility. Our promise is that we never remove or significantly modify a component's interface. If we need to change a prop name, we add the new name, and deprecate the old one until a major release where we remove the deprecated one.
+
+The challenge is, without TypeScript, how do you know if your interfaces have changed or not? If I do a big refactor of a control, how can I ensure that I haven't broken it for everyone...or even just a few people?
+
+But with TypeScript, I can do major refactors of controls, and as long as our promise (the interface) hasn't changed, users should be confident that given the same props, they will get the same result.
+
+We can take that a step further by taking [a snapshot](https://github.com/OfficeDev/office-ui-fabric-react/blob/master/packages/office-ui-fabric-react/etc/office-ui-fabric-react.api.md) of the [API Extractor](https://api-extractor.com/) output, and testing subsequent builds and PRs against that snapshot. This way if an interface changes, we break the build until we determine if the change is appropriate for a point release. 
+
+If the API has changed (new props added, or the interface tightened a bit) we can also easily flag those PRs with a "API Modified" tag in GitHub so that we can pay extra attention to that PR.
+
+## Conclusion
+
+No one wants to be handed a cool new control, then be told to go read all of the docs every time they need to remember if `<Button expanded=` takes a `boolean` or a `string`, or what the shape of `<Button menuProps=` is, because someone forgot to add `menuProps` to the doc site. They don't want to be forced to read your change log every release then comb through thousands of lines of code to make sure some API hasn't changed out from under them.
+
+TypeScript gives you super powers when writing your control library, but the true power of the language are the tools and promises that you can provide to your consumers. Even if you don't use TypeScript internally, provide types with your library! Once you've used a properly typed library, you'll never want to go back to hunting through source code to figure out how your controls are supposed to work.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
