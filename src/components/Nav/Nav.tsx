@@ -29,7 +29,7 @@ export const Nav = (props: INavProps) => {
           </li>
           <li>
             <a target="_blank" href={'http://fea.pub/'}>
-              Book
+              My Book
             </a>
           </li>
         </ul>
