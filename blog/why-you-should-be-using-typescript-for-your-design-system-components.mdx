@@ -81,4 +81,36 @@ The way we do this on UI Fabric is with a utility called [API Extractor](https:/
 
 ## Enforcing backwards compatibility
 
-Another advantage of using API extractor is that we can use it to ensure that we aren't breaking backwards compatibility. Our promise is that we never remove or change
+Another advantage of using API extractor is that we can use it to ensure that we aren't breaking backwards compatibility. Our promise is that we never remove or significantly modify a component's interface. If we need to change a prop name, we add the new name, and deprecate the old one until a major release where we remove the deprecated one.
+
+The challenge is, without TypeScript, how do you know if your interfaces have changed or not? If I do a big refactor of a control, how can I ensure that I haven't broken it for everyone...or even just a few people?
+
+But with TypeScript, I can do major refactors of controls, and as long as our promise (the interface) hasn't changed, users should be confident that given the same props, they will get the same result.
+
+We can take that a step further by taking a snapshot of [API Extractor](https://api-extractor.com/) output, and testing subsequent builds and PRs against that snapshot. This way if an interface changes, we break the build until we determine if the change is appropriate for a point release. 
+
+If the API has changed (new props added, or the interface tightened a bit) we can also easily flag those PRs with a "API Modified" tag in GitHub so that we can pay extra attention to that PR.
+
+## Conclusion
+
+No one wants to be handed a cool new control, then be told to go read all of the docs every time they need to remember if `<Button expanded=` takes a boolean or a string, or what the shape of `<Button menuProps=` is, because someone forgot to add the prop to their doc site. 
+
+They also don't want to be forced to read your change log for every release, and comb through thousands of lines of code to make sure some API hasn't changed out from under them.
+
+TypeScript gives you super powers when writing your control library, but the true power of the language are the tools and promises that you can provide to your consumers. Even if you don't use TypeScript internally, provide types with your library! Once you've used a properly typed library, you'll never want to go back to hunting through source code to figure out how your controls are supposed to work.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
