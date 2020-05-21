@@ -1,0 +1,50 @@
+---
+date: 2019-10-16T17:57:42.067Z
+title: Writing callbacks that prevent default behavior
+---
+A common pattern in writing components are callback props: a user provided function that gets called at a particular point of a component's life cycle. 
+
+One question that often comes up though, is what to do about the default behavior. If the Dropdown is dismissed when you click on an item, or click on the page how should the `onDismiss` callback affect that behavior?
+
+### Replace existing behavior
+
+One option would be to replace the default behavior with the provided `onDismiss` prop, but in my opinion that's a bit heavy handed. If all you want to do is add some analytics then you're leaving the user to reproduce the default behavior on their own.
+
+### Supplement existing behavior
+
+Another option is to just call the `onDismiss` and then perform the default behavior, but inevitably someone will ask for a way to stop that menu from being dismissed...but only under specific circumstances. This leads us to the 3rd option.
+
+### Provide a default behavior escape hatch
+
+Assuming we're talking about event driven behavior (mouse click, keyboard stroke etc) then your function will have access to the event causing that event. We've been using [`preventDefault`](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) to stop default behavior of buttons and other elements for a long time, but did you know you can connect this to your custom behavior as well? Lets take a look at that:
+
+Here's the function (in JSX) that you'd use within your component. If some event happens that would typically dismiss your dropdow you first call the `onDismiss` prop, and if `event.DefaultPrevented` is still false, you run your logic to hide the Dropdown.
+
+```jsx
+  const onDismissDropdown = (event) => {
+    const { onDismiss} = props;
+
+    if (onDismiss) {
+      onDismiss(event);
+    }
+    if (!event.defaultPrevented) {
+      dismissDropdown();
+    }
+  };
+```
+
+Then the consumer can use `onDismiss` to do all sorts of things, like prevent the default dismiss behavior if the user had the shift key held down:
+
+```jsx
+<Dropdown
+  onDismiss={(event) => {
+    if (event.shiftKey === true) {
+      event.preventDefault();
+    }
+  }}  
+  {...otherProps}
+/>
+```
+
+
+

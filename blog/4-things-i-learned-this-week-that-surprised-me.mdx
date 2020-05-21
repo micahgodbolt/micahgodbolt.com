@@ -1,0 +1,138 @@
+---
+date: 2019-10-18T03:31:06.107Z
+title: 4 things I learned this week that surprised me
+---
+
+## Specificity and !important
+
+I like using [twitter polls](https://twitter.com/micahgodbolt/status/1131626097349496833) to test people's assumptions around odd edge case CSS knowledge, so when I saw this tweet:
+
+<blockquote class="twitter-tweet">
+    <p lang="en" dir="ltr">
+        <a href="https://twitter.com/hashtag/DailySpecificity?src=hash&amp;ref_src=twsrc%5Etfw">#DailySpecificity</a>
+        <br/>
+        <br/>html\`
+        <br/> &lt;dl&gt;
+        <br/> &lt;dt class=&quot;title&quot;&gt;...&lt;/dt&gt;
+        <br/> &lt;dd class=&quot;definition&quot;&gt;...&lt;/dd&gt;
+        <br/> &lt;/dl&gt
+        ;<br/>\`
+        <br/>
+        <br/>css\`
+        <br/> dl &gt; dt.title &#123;
+        <br/> color: hotpink !important;
+        <br/> &#125;
+        <br/>
+        <br/> dl &gt; dt &#123;
+        <br/> color: rebeccapurple !important;
+        <br/> &#125;
+        <br/>\`
+        <br/>
+        <br/>what color is the &lt;dt&gt;?
+    </p>
+    &mdash; Adam Argyle (@argyleink) <a href="https://twitter.com/argyleink/status/1182041480065536000?ref_src=twsrc%5Etfw">October 9, 2019</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+I decided to jump right on in!
+
+My first guess was `hotpink` due to higher specificity of the selector, but then I thought about the `!important` tag being a big trump card for specificity, and how our initial assumptions are often wrong. So I guessed that `!important` basically blew away all specificity, and without specificity, all that was left was the cascade.
+
+So `rebeccapurple` it was! I outsmarted the poll!
+
+Except that I was wrong...
+
+The answer actually was `hotpink`.
+
+### Why?
+
+In the past, you've probably seen specificity written like this:
+
+```css
+#someID .myClass.myOtherClass a {
+  color: green;
+}
+/* id - class - tag  */
+/* 1    2       1 */
+
+ul li div.linkClass span #anchorID {
+  color: red;
+}
+/* id - class - tag  */
+/* 1    1       4  */
+```
+
+If both selectors match the anchor tag, the color will be `green` because the first slot is the same (1) but the second slot is higher for `green`. In this case, the 3rd slot doesn't even matter.
+
+So enter the !important declaration! So what exactly does that do? Lets look:
+
+```css
+dl > dt.title { color: hotpink !important }
+/* ! - id - class - tag  */
+/* 1   0    1       2  */
+
+/* vs */
+
+dl > dt { color: rebeccapurple !important }
+/* ! - id - class - tag  */
+/* 1   0    1       1  */
+```
+
+So just like above, we go left to right until we find a higher value.
+
+- !important: `1 === 1`
+- id: `0 === 0`
+- class: `1 === 1`
+- tag: `1 < 2` winner `hotpink`!
+
+### Conclusion
+
+It turns out there was a 4th value in CSS specificity all along.
+
+## Solving problems at scale
+
+Our industry changes at a very fast pace, and I'd probably say it's speeding up. The tools we are using to build experiences today are often net new projects built on top of the tools, needs, and frustrations of just a couple years past.
+
+One thing that keeps surprising me at Microsoft, but really shouldn't, is how often I run into other people, from different departments, that are trying to solve the exact same problems I'm trying to solve, using the exact same tools that I selected as well!
+
+I believe this is happening more often because of this ever evolving landscape of tools and best practices. The JAM stack, and statically generated sites, is a relatively new set of tools for the enterprise market, but it is solving, at scale, a large number of issues that many of our teams are encountering:
+
+1. Ownership of content
+2. Flexibility of markup and presentation
+3. Leveraging open source technologies and ecosystems
+4. Building systems that are easy to hire for
+
+So when technologies like Gatsby and ContentfulCMS come along, it's no huge surprise that teams, who face these above challenges, start moving towards those solutions en masse.
+
+This is where design systems teams have the opportunity to shine. By identifying these pains early in their life cycles, and proactively identifying and vetting solutions, they have an opportunity to create shared solutions. Rather than each team building a silo'ed solution, this shared solution saves partner teams time, and creates a coherent experience that leverages best practices and allows teams to contribute to a single effort.
+
+Obviously, identifying these trends doesn't always happen, and you get the situation I'm experiencing today: meeting team after team that has already invested in an identical stack to solve an identical set of problems.
+
+Fortunately, this isn't a win or lose scenario. We can still learn to identify this duplicate work, and figure out the best way to align the projects together. It's certainly to merge duplicative efforts together, but in the end, the product is well worth it.
+
+## Feeling productive at work bleeds into your personal life
+
+In the past several months I've been struggling to find the passion and energy to dig into side projects, blog, read, watch tutorials, and just in general taking time to invest in myself. But in these past few weeks I've found myself feeling something I had not felt in a long time.
+
+Recently I started spending more time at work writing code than dealing with the project management side of my job. My calendar opened up, my focus began to narrow on a smaller number of projects, and I finally found myself digging into multi hour blocks of work on projects that had sufficient clarity and done criteria.
+
+In other words: I got to focus on 3 scoped, completable projects, vs juggling 20 different initiatives with loose objectives, slippery timelines, and non-existent resources.
+
+The result of this change was pretty drastic. I woke up ready to dive into work, I finished excited and energized, and when I thought about digging into an evening project the momentum of my day left me plenty of energy to get going.
+
+### Conclusion
+
+There are many things that influence your energy level: Age, sleep, exercise, diet, but don't forget to look at the energy work leaves you with. Sometimes it can suck you dry, and other times it can actually give you a boost! So strive hard to find that work that excites you and keeps you going. It'll leave you with energy and passion to keep learning, and keep getting better, and open up doors to do even more things that you love.
+
+## Working from home and why Friday is opposite day
+
+At work, we usually keep Fridays pretty free from meetings means that many of my office bound co-workers take the opportunity to work from home. This often leads to awkwardness during those occasional Friday meetings where a dev, working from their kitchen counter, has to apologize for their connection quality, lack of headphones, or the sound of barking dogs and construction.
+
+"Sorry about the call quality, I'm WFH today".
+
+Me, on the other hand, see Fridays completely differently.
+
+My normal day is working from home. My connection is great, my headset/mic is top notch, the dog is either at doggy day care, or quietly sleeping in her crate. But sometimes I want to go to a coffee shop or co-work with friends in town...anything to get out of the house. I've realized recently that Friday is a great day to do that. No meetings, no worries about trying to take a call from a coffee shop or co-working space dealing with questionable network, audio, or dogs.
+
+So next time you're enjoying your meeting free day as a WFH day, I'll be making my trek into the city to actually be working around other people. Since today is Thursday, I'll wish you all a happy Friday tomorrow...or as I call it: opposite day.
