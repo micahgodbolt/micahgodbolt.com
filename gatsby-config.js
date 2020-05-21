@@ -5,9 +5,10 @@ module.exports = {
     title: 'Micah Godbolt',
     description: 'My Blog',
     author: 'Micah Godbolt',
-    siteUrl: 'https://MicahGodbolt.com'
+    siteUrl: 'https://MicahGodbolt.com',
   },
   plugins: [
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
     `gatsby-transformer-remark`,
@@ -16,8 +17,8 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [`gatsby-remark-images`]
-      }
+        plugins: [`gatsby-remark-images`],
+      },
     },
     {
       resolve: `gatsby-plugin-mdx`,
@@ -29,28 +30,28 @@ module.exports = {
               maxWidth: 400,
               withWebp: true,
               tracedSVG: true,
-              linkImagesToOriginal: false
-            }
+              linkImagesToOriginal: false,
+            },
           },
           {
-            resolve: `gatsby-remark-copy-linked-files`
-          }
-        ]
-      }
+            resolve: `gatsby-remark-copy-linked-files`,
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/blog`,
-        name: 'blog'
-      }
+        name: 'blog',
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages'
-      }
+        name: 'pages',
+      },
     },
     {
       resolve: `gatsby-source-airtable`,
@@ -59,10 +60,10 @@ module.exports = {
         tables: [
           {
             baseId: 'appInxhv8w9saEAIZ',
-            tableName: 'Speaking'
-          }
-        ]
-      }
+            tableName: 'Speaking',
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-feed`,
@@ -82,14 +83,14 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
+              return allMdx.edges.map((edge) => {
                 node = edge.node;
                 if (node.fields && node.fields.slug) {
                   return Object.assign({}, node.frontmatter, {
                     description: node.excerpt,
                     url: site.siteMetadata.siteUrl + node.fields.slug,
                     guid: site.siteMetadata.siteUrl + node.fields.slug,
-                    custom_elements: [{ 'content:encoded': node.excerpt }]
+                    custom_elements: [{ 'content:encoded': node.excerpt }],
                   });
                 }
               });
@@ -113,14 +114,14 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: "Micah Godbolt's RSS Feed"
+            title: "Micah Godbolt's RSS Feed",
             // optional configuration to insert feed reference in pages:
             // if `string` is used, it will be used to create RegExp and then test if pathname of
             // current page satisfied this regular expression;
             // if not provided or `undefined`, all pages will have feed reference inserted
-          }
-        ]
-      }
-    }
-  ]
+          },
+        ],
+      },
+    },
+  ],
 };
